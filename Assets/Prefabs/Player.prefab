@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 6225360284593069760}
   - component: {fileID: -597238612917641435}
   - component: {fileID: -4628494163845530178}
+  - component: {fileID: 8317050556027364499}
   m_Layer: 20
   m_Name: Player
   m_TagString: Player
@@ -366,6 +367,39 @@ MonoBehaviour:
   - {fileID: 3481368803108073829}
   - {fileID: 2355246341240937963}
   - {fileID: 3037109503345827384}
+--- !u!114 &8317050556027364499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6136130108317233191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff3ba0becae47b8b9381191598957c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 1
+  syncMode: 0
+  syncInterval: 0
+  target: {fileID: 1971038861256716561}
+  syncPosition: 1
+  syncRotation: 1
+  syncScale: 0
+  onlySyncOnChange: 1
+  compressRotation: 1
+  interpolatePosition: 1
+  interpolateRotation: 1
+  interpolateScale: 1
+  coordinateSpace: 0
+  timelineOffset: 1
+  showGizmos: 0
+  showOverlay: 0
+  overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
+  onlySyncOnChangeCorrectionMultiplier: 2
+  rotationSensitivity: 0.01
+  positionPrecision: 0.01
+  scalePrecision: 0.01
 --- !u!1 &7128627341842369392
 GameObject:
   m_ObjectHideFlags: 0

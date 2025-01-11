@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Medieval_1.unity
+    path: Assets/Scenes/MainScene.unity
     guid: 86e89bd9e4a9c5245a015cf17e3c0aae
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
