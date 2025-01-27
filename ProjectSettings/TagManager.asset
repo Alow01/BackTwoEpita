@@ -6,6 +6,10 @@ TagManager:
   tags:
   - DefaultCamera
   - Menu
+  - DialogueBox
+  - CRG
+  - TAG
+  - SHG
   layers:
   - Default
   - TransparentFX
