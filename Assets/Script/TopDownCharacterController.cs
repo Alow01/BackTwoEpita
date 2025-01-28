@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
+using Mirror;
+using Unity.VisualScripting;
 
 namespace Cainos.PixelArtTopDown_Basic
 {
-    public class TopDownCharacterController : MonoBehaviour
+    public class TopDownCharacterController : NetworkBehaviour
     {
         public float speed;
 
@@ -18,14 +20,17 @@ namespace Cainos.PixelArtTopDown_Basic
         
         Rigidbody2D rigidbody2d;
 
+        public DialogueManager dialogueManager; // Référence au DialogueManager
+        public string dialogueMessage = "Test";
+
         void FindObject()
         {
-            RaycastHit2D hit = Physics2D.Raycast(rigidbody2d.position + Vector2.up * 0.2f,  direction, 0.5f, LayerMask.GetMask("Layer 4"));
+            RaycastHit2D hit = Physics2D.Raycast(rigidbody2d.position + Vector2.up * 0.2f, direction, 0.5f, LayerMask.GetMask("Layer 4"));
             
-            if ( hit.collider != null);
+            if (hit.collider != null)
             {
-                Debug.Log("Raycast has hit the object " + hit.collider.gameObject+direction);
-                
+                //Debug.Log("Raycast has hit the object " + hit.collider.gameObject.tag);
+                OpenDialogue(hit.collider.gameObject.tag);
             }
             
           
@@ -77,7 +82,28 @@ namespace Cainos.PixelArtTopDown_Basic
             
             if (Input.GetKeyDown(KeyCode.E))
             {
-              FindObject();
+                FindObject();
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                CloseDialogue();
+            }
+        }
+
+        private void OpenDialogue(string tag)
+        {
+            if (isLocalPlayer)
+            {
+                dialogueManager.RpcShowDialogue(tag);
+            }
+        }
+
+        private void CloseDialogue()
+        {
+            if (isLocalPlayer)
+            {
+                dialogueManager.HideDialogue();
             }
         }
     }

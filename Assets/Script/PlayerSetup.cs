@@ -54,6 +54,7 @@ public class PlayerSetup : NetworkBehaviour
             defaultCam.gameObject.SetActive(true);
         }
         //Menu.SetActive(true);
+
     }
 
     public override void OnStartServer()
