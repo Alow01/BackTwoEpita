@@ -10,6 +10,11 @@ TagManager:
   - CRG
   - TAG
   - SHG
+  - Interactable
+  - Stone 1 red
+  - Stone 2 red
+  - Stone 3 red
+  - Stone 4 red
   layers:
   - Default
   - TransparentFX
