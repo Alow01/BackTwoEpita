@@ -6,6 +6,7 @@ TagManager:
   tags:
   - DefaultCamera
   - Menu
+  - MenuButton
   - DialogueBox
   - CRG
   - TAG

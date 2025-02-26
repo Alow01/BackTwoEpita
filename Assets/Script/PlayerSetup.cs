@@ -1,5 +1,8 @@
 using UnityEngine;
 using Mirror;
+using UnityEngine.UI;
+using TMPro;
+using Unity.VisualScripting;
 
 public class PlayerSetup : NetworkBehaviour
 {
@@ -12,7 +15,13 @@ public class PlayerSetup : NetworkBehaviour
     Camera playerCamera;
     GameObject defaultCam;
 
-    GameObject Menu;
+
+
+    //  MENU
+    public GameObject menuPanel;
+    public Button menuButton;
+
+    private bool isMenuOpen = false;
 
     void Start()
     {
@@ -39,8 +48,10 @@ public class PlayerSetup : NetworkBehaviour
             }
 
         }
-        //Menu = GameObject.FindGameObjectWithTag("Menu");
-        //Menu.SetActive(false);
+        //menuPanel = GameObject.FindGameObjectWithTag("Menu");
+        //menuButton = GameObject.FindGameObjectWithTag("MenuButton").GetComponent<Button>();
+        //menuPanel.SetActive(false);
+        //menuButton.onClick.AddListener(ToggleMenu);
     }
 
     private void OnDisable()
@@ -67,4 +78,9 @@ public class PlayerSetup : NetworkBehaviour
         if (!isServer) playerRole = "Player 2";
     }
 
+    void ToggleMenu()
+    {
+        isMenuOpen = !isMenuOpen;
+        menuPanel.SetActive(isMenuOpen);
+    }
 }
