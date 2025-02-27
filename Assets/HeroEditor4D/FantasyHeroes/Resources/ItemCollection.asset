@@ -1,0 +1,199 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa5c5884bb17ba64481f623ebc4accaa, type: 3}
+  m_Name: ItemCollection
+  m_EditorClassIdentifier: 
+  SpriteCollections:
+  - {fileID: 11400000, guid: ed0b296bc13a33144a4e9ea08d0ad5d5, type: 2}
+  IconCollections:
+  - {fileID: 11400000, guid: 83af5b247e841f5468a89890dddc7d78, type: 2}
+  Items:
+  - Id: Gold
+    Level: 0
+    Rarity: 0
+    Type: 1
+    Class: 0
+    Tags: 
+    Properties: []
+    Price: 0
+    Weight: 0
+    Material: 0
+    IconId: Common.Common.Supplies.Coin
+    SpriteId: Common.Common.Supplies.Coin
+    Meta: 
+    Localization: []
+  - Id: WarriorHelmet
+    Level: 0
+    Rarity: 0
+    Type: 9
+    Class: 9
+    Tags: 
+    Properties:
+    - Id: 29
+      Value: 5
+    Price: 10
+    Weight: 30
+    Material: 0
+    IconId: FantasyHeroes.Basic.Helmet.WarriorArmor
+    SpriteId: FantasyHeroes.Basic.Armor.WarriorArmor
+    Meta: 
+    Localization: []
+  - Id: WarriorArmor
+    Level: 0
+    Rarity: 0
+    Type: 8
+    Class: 9
+    Tags: 
+    Properties:
+    - Id: 29
+      Value: 10
+    Price: 15
+    Weight: 50
+    Material: 0
+    IconId: FantasyHeroes.Basic.Armor.WarriorArmor
+    SpriteId: FantasyHeroes.Basic.Armor.WarriorArmor
+    Meta: 
+    Localization: []
+  - Id: Sabre
+    Level: 0
+    Rarity: 0
+    Type: 6
+    Class: 2
+    Tags: 
+    Properties:
+    - Id: 13
+      Value: 18-20
+    Price: 20
+    Weight: 50
+    Material: 0
+    IconId: FantasyHeroes.Basic.MeleeWeapon1H.Sabre
+    SpriteId: FantasyHeroes.Basic.MeleeWeapon1H.Sabre
+    Meta: 
+    Localization: []
+  - Id: DestroyerGreataxe
+    Level: 0
+    Rarity: 1
+    Type: 6
+    Class: 3
+    Tags: 03000000
+    Properties:
+    - Id: 13
+      Value: 36-40
+    Price: 50
+    Weight: 100
+    Material: 0
+    IconId: FantasyHeroes.Basic.MeleeWeapon2H.DestroyerGreataxe
+    SpriteId: FantasyHeroes.Basic.MeleeWeapon2H.DestroyerGreataxe
+    Meta: 
+    Localization: []
+  - Id: GreatShield
+    Level: 0
+    Rarity: 1
+    Type: 7
+    Class: 9
+    Tags: 
+    Properties:
+    - Id: 4
+      Value: 5
+    Price: 15
+    Weight: 60
+    Material: 0
+    IconId: FantasyHeroes.Basic.Shield.GuardShield
+    SpriteId: FantasyHeroes.Basic.Shield.GuardShield
+    Meta: 
+    Localization: []
+  - Id: CurvedShortBow
+    Level: 0
+    Rarity: 0
+    Type: 6
+    Class: 7
+    Tags: 
+    Properties:
+    - Id: 4
+      Value: 5
+    Price: 15
+    Weight: 20
+    Material: 0
+    IconId: FantasyHeroes.Basic.Bow.CurvedShortBow
+    SpriteId: FantasyHeroes.Basic.Bow.CurvedShortBow
+    Meta: 
+    Localization: []
+  - Id: PirateHat
+    Level: 0
+    Rarity: 1
+    Type: 9
+    Class: 8
+    Tags: 
+    Properties:
+    - Id: 4
+      Value: 5
+    Price: 15
+    Weight: 20
+    Material: 0
+    IconId: FantasyHeroes.Basic.Helmet.PirateCostume [ShowEars]
+    SpriteId: FantasyHeroes.Basic.Armor.PirateCostume [ShowEars]
+    Meta: 
+    Localization: []
+  - Id: LongBarreledPistol
+    Level: 0
+    Rarity: 2
+    Type: 6
+    Class: 20
+    Tags: 
+    Properties:
+    - Id: 4
+      Value: 5
+    Price: 15
+    Weight: 20
+    Material: 0
+    IconId: FantasyHeroes.Basic.Firearm1H.LongBarreledPistol
+    SpriteId: FantasyHeroes.Basic.Firearm1H.LongBarreledPistol
+    Meta: 
+    Localization: []
+  - Id: Apple
+    Level: 0
+    Rarity: 0
+    Type: 4
+    Class: 12
+    Tags: 
+    Properties:
+    - Id: 20
+      Value: 10
+    Price: 5
+    Weight: 5
+    Material: 0
+    IconId: Common.Common.Supplies.RedApple
+    SpriteId: Common.Common.Supplies.RedApple
+    Meta: 
+    Localization: []
+  - Id: GoldenRing
+    Level: 0
+    Rarity: 2
+    Type: 17
+    Class: 0
+    Tags: 
+    Properties:
+    - Id: 4
+      Value: 5
+    Price: 100
+    Weight: 1
+    Material: 0
+    IconId: FantasyHeroes.Basic.Supplies.GoldenRing
+    SpriteId: FantasyHeroes.Basic.Supplies.GoldenRing
+    Meta: 
+    Localization: []
+  BackgroundBlue: {fileID: 21300000, guid: a7a9761b8498fc3469b31675a4250f17, type: 3}
+  BackgroundBrown: {fileID: 21300000, guid: 407123b69c6ad85469da2466fe776a87, type: 3}
+  BackgroundGreen: {fileID: 21300000, guid: bd113ac01de518d43abfd2afc18e75f5, type: 3}
+  BackgroundGrey: {fileID: 21300000, guid: c49e3554a0acc074595cbdacdf2a4eca, type: 3}
+  BackgroundPurple: {fileID: 21300000, guid: bd0d835805a0c5846978e1b2c3ded5d6, type: 3}
+  BackgroundRed: {fileID: 21300000, guid: 9df088df15c9f2347bd8c55d54b50b84, type: 3}

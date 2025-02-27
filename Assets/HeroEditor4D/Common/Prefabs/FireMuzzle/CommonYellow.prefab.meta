@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: c43b9f149a834261b676efb559453cea
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 247105
+  packageName: 'Fantasy Heroes: Character Editor 4D'
+  packageVersion: 5.3
+  assetPath: Assets/HeroEditor4D/Common/Prefabs/FireMuzzle/CommonYellow.prefab
+  uploadId: 571324

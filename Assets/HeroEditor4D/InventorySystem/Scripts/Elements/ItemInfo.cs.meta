@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 71a926fb72b5a4f438891452c4866688
+timeCreated: 1508494765
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 247105
+  packageName: 'Fantasy Heroes: Character Editor 4D'
+  packageVersion: 5.3
+  assetPath: Assets/HeroEditor4D/InventorySystem/Scripts/Elements/ItemInfo.cs
+  uploadId: 571324

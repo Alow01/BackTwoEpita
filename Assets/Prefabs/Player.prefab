@@ -436,7 +436,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneId: 0
-  _assetId: 3471214793
+  _assetId: 3855316792
   serverOnly: 0
   visibility: 0
   hasSpawned: 0
@@ -509,5 +509,3 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
-  dialogueCanvas: {fileID: 0}
-  dialogueText: {fileID: 0}

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 8e6421c02d1181d4795f9fe4e0320c5c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 247105
+  packageName: 'Fantasy Heroes: Character Editor 4D'
+  packageVersion: 5.3
+  assetPath: Assets/HeroEditor4D/Common/Scripts/ExampleScripts/QuickStart.cs
+  uploadId: 571324

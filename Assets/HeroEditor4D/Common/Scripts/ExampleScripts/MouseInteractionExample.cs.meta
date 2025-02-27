@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 2242debf0f83d5049bad0935b580cc60
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 247105
+  packageName: 'Fantasy Heroes: Character Editor 4D'
+  packageVersion: 5.3
+  assetPath: Assets/HeroEditor4D/Common/Scripts/ExampleScripts/MouseInteractionExample.cs
+  uploadId: 571324

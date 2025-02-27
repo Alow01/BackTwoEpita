@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 20864001ae94bea4ca0313eb937f759f
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 247105
+  packageName: 'Fantasy Heroes: Character Editor 4D'
+  packageVersion: 5.3
+  assetPath: Assets/HeroEditor4D/FantasyHeroes/Resources/FirearmCollection.asset
+  uploadId: 571324

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4f598323443ee6d42969e8b0e1261d09
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 4343727234628468602
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 247105
+  packageName: 'Fantasy Heroes: Character Editor 4D'
+  packageVersion: 5.3
+  assetPath: Assets/HeroEditor4D/FantasyHeroes/Atlases/Icons.spriteatlas
+  uploadId: 571324

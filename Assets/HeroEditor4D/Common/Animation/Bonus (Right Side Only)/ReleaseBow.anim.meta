@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c1bca94f45628994bb9559684cc34e45
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 247105
+  packageName: 'Fantasy Heroes: Character Editor 4D'
+  packageVersion: 5.3
+  assetPath: Assets/HeroEditor4D/Common/Animation/Bonus (Right Side Only)/ReleaseBow.anim
+  uploadId: 571324

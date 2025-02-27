@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 4b21edc9891e9b243b69701a0b5656e1
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 247105
+  packageName: 'Fantasy Heroes: Character Editor 4D'
+  packageVersion: 5.3
+  assetPath: Assets/HeroEditor4D/InventorySystem/Scripts/Elements/ScrollInventoryFilter.cs
+  uploadId: 571324

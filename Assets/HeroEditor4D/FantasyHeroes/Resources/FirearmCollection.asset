@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3202ed5772e26f4418e66b1d9df3a2d4, type: 3}
+  m_Name: FirearmCollection
+  m_EditorClassIdentifier: 
+  Id: FantasyHeroes
+  FirearmParams:
+  - Name: Basic
+    FireMuzzlePrefab: {fileID: 198953912695222202, guid: a208369b09ed4ad99f6cb05262f681e3,
+      type: 3}
+    ShotSound: {fileID: 8300000, guid: 77b5397a51eb2844b8fe48aa8da2064f, type: 3}
+    ReloadSound: {fileID: 8300000, guid: da05161b13634a65b7046371c46febae, type: 3}

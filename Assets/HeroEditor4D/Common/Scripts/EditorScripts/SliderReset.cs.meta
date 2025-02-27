@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 7eac1736b7a245f48a83b2a87db3d653
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 247105
+  packageName: 'Fantasy Heroes: Character Editor 4D'
+  packageVersion: 5.3
+  assetPath: Assets/HeroEditor4D/Common/Scripts/EditorScripts/SliderReset.cs
+  uploadId: 571324
