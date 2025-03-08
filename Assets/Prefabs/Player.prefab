@@ -461,6 +461,8 @@ MonoBehaviour:
   - {fileID: 6090867815265369450}
   - {fileID: 4678456673660521287}
   - {fileID: 5664450810296284052}
+  menuPanel: {fileID: 0}
+  menuButton: {fileID: 0}
 --- !u!114 &5657823065355771235
 MonoBehaviour:
   m_ObjectHideFlags: 0
