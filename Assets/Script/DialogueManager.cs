@@ -12,7 +12,6 @@ public class DialogueManager : NetworkBehaviour
     private void Start()
     {
         if(dialogueBox == null) dialogueBox = GameObject.FindGameObjectWithTag("DialogueBox");
-
         if (dialogueText == null) dialogueText = dialogueBox.GetComponentInChildren<TMP_Text>(); // Recherche le TMP_Text dans les enfants
         
 
