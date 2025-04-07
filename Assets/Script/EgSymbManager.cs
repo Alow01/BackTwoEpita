@@ -10,7 +10,7 @@ public class EgSymbManager : MonoBehaviour
     public GameObject case5;
 
     public GameObject door;
-    private bool hasBeenOpen = false;
+    private bool hasBeenOpen;
 
     BoxCollider2D col1;
     BoxCollider2D col2;
@@ -20,8 +20,7 @@ public class EgSymbManager : MonoBehaviour
 
     private void Start()
     {
-        
-
+        hasBeenOpen = false;
     }
     void Update()
     {
@@ -44,11 +43,19 @@ public class EgSymbManager : MonoBehaviour
                 && hit3 != null && hit3.gameObject != case3
                 && hit4 != null && hit4.gameObject != case4
                 && hit5 != null && hit5.gameObject != case5;
+            /*
+            if (hit1 != null && hit1.gameObject != case1) Debug.Log("case 1 activé");
+            if (hit2 != null && hit2.gameObject != case2) Debug.Log("case 2 activé");
+            if (hit3 != null && hit3.gameObject != case3) Debug.Log("case 3 activé");
+            if (hit4 != null && hit4.gameObject != case4) Debug.Log("case 4 activé");
+            if (hit5 != null && hit5.gameObject != case5) Debug.Log("case 5 activé");
+            */
+
 
             if (condition) {
-                Debug.Log("All conditions are reunite !");
+                Debug.Log("All symbols has been press at the same time -> Success enigma -> Door P2 is now open");
                 hasBeenOpen = true;
-                door.SetActive(false);
+                door.GetComponent<Transform>().position = new Vector3(100,-100,0);
             }
         }
     }

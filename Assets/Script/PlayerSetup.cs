@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using TMPro;
 using Unity.VisualScripting;
 
-public class PlayerSetup : MonoBehaviour
+public class PlayerSetup : NetworkBehaviour
 {
     [SyncVar]
     public string playerRole;
