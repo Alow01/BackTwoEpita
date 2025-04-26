@@ -7,7 +7,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using Mirror;
 using TMPro;
-using Assets.HeroEditor4D.Common.Scripts.Common;
 
 public class CustomNetworkUI : MonoBehaviour
 {
@@ -37,7 +36,7 @@ public class CustomNetworkUI : MonoBehaviour
     {
         networkManager.StartHost();
         statusText.text = "Server Active...";
-        stopButton.SetActive(true);
+        stopButton.gameObject.SetActive(true);
     }
 
     void StartClient()
@@ -45,7 +44,7 @@ public class CustomNetworkUI : MonoBehaviour
         networkManager.networkAddress = ipInput.text;
         networkManager.StartClient();
         statusText.text = "Connect to " + ipInput.text;
-        stopButton.SetActive(true);
+        stopButton.gameObject.SetActive(true);
     }
 
     void StopNetwork()
@@ -60,7 +59,7 @@ public class CustomNetworkUI : MonoBehaviour
             networkManager.StopClient();
             statusText.text = "Disconnected from the Server";
         }
-        stopButton.SetActive(false);
+        stopButton.gameObject.SetActive(false);
 
     }
 

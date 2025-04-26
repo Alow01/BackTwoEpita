@@ -1,1 +1,0 @@
-We made these animations for our side-view game, so they are all 1-direction.

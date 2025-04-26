@@ -1,56 +1,33 @@
 using Mirror;
 using UnityEngine;
+using System;
 
 public class EgSymbManager : MonoBehaviour
 {
-    public GameObject case1;
-    public GameObject case2;
-    public GameObject case3;
-    public GameObject case4;
-    public GameObject case5;
-
     public GameObject door;
+
     private bool hasBeenOpen;
 
-    BoxCollider2D col1;
-    BoxCollider2D col2;
-    BoxCollider2D col3;
-    BoxCollider2D col4;
-    BoxCollider2D col5;
+    private bool press1;
+    private bool press2;
+    private bool press3;
+    private bool press4;
+    private bool press5;
 
     private void Start()
     {
         hasBeenOpen = false;
+        press1 = false;
+        press2 = false;
+        press3 = false;
+        press4 = false;
+        press5 = false;
     }
     void Update()
     {
         if (!hasBeenOpen) {
 
-            col1 = case1.GetComponent<BoxCollider2D>();
-            col2 = case2.GetComponent<BoxCollider2D>();
-            col3 = case3.GetComponent<BoxCollider2D>();
-            col4 = case4.GetComponent<BoxCollider2D>();
-            col5 = case5.GetComponent<BoxCollider2D>();
-
-            Collider2D hit1 = Physics2D.OverlapBox(col1.bounds.center, col1.bounds.size, 0f);
-            Collider2D hit2 = Physics2D.OverlapBox(col2.bounds.center, col2.bounds.size, 0f);
-            Collider2D hit3 = Physics2D.OverlapBox(col3.bounds.center, col3.bounds.size, 0f);
-            Collider2D hit4 = Physics2D.OverlapBox(col4.bounds.center, col4.bounds.size, 0f);
-            Collider2D hit5 = Physics2D.OverlapBox(col5.bounds.center, col5.bounds.size, 0f);
-
-            bool condition = hit1 != null && hit1.gameObject != case1
-                && hit2 != null && hit2.gameObject != case2
-                && hit3 != null && hit3.gameObject != case3
-                && hit4 != null && hit4.gameObject != case4
-                && hit5 != null && hit5.gameObject != case5;
-            /*
-            if (hit1 != null && hit1.gameObject != case1) Debug.Log("case 1 activé");
-            if (hit2 != null && hit2.gameObject != case2) Debug.Log("case 2 activé");
-            if (hit3 != null && hit3.gameObject != case3) Debug.Log("case 3 activé");
-            if (hit4 != null && hit4.gameObject != case4) Debug.Log("case 4 activé");
-            if (hit5 != null && hit5.gameObject != case5) Debug.Log("case 5 activé");
-            */
-
+            bool condition = press1 && press2 && press3 && press4 && press5;
 
             if (condition) {
                 Debug.Log("All symbols has been press at the same time -> Success enigma -> Door P2 is now open");
@@ -58,5 +35,36 @@ public class EgSymbManager : MonoBehaviour
                 door.GetComponent<Transform>().position = new Vector3(100,-100,0);
             }
         }
+
     }
+    public void OnPlateTriggered(Collider2D other, string name)
+    {
+
+        switch (name)
+        {
+            case ("P1"): press1 = true; break;
+            case ("P2"): press2 = true; break;
+            case ("P3"): press3 = true; break;
+            case ("P4"): press4 = true; break;
+            case ("P5"): press5 = true; break;
+            default: Debug.Log("Wrong Name"); break;
+        }
+        Debug.Log($"Pressure plate {name} has been pressed !");
+        
+    }
+    public void OnPlateUntriggered(Collider2D other, string name)
+    {
+        switch (name)
+        {
+            case ("P1"): press1 = false; break;
+            case ("P2"): press2 = false; break;
+            case ("P3"): press3 = false; break;
+            case ("P4"): press4 = false; break;
+            case ("P5"): press5 = false; break;
+            default: Debug.Log("Wrong Name"); break;
+        }
+        Debug.Log($"Pressure plate {name} has been released !");
+    }
+
+
 }
