@@ -1,4 +1,4 @@
-﻿using Mirror.Examples.BilliardsPredicted;
+using Mirror.Examples.BilliardsPredicted;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,31 +10,28 @@ namespace Cainos.PixelArtTopDown_Basic
 {
     //when object exit the trigger, put it to the assigned layer and sorting layers
     //used in the stair objects for player to travel between layers
-    public class LayerTrigger : MonoBehaviour
+    public class GraveStone : MonoBehaviour
     {
         public Image textToPrint;
-        public InputAction action;
+        public InputAction touchKeyEAction; // Replaced InputSystem with InputAction to fix CS0723
 
-        public UnityEngine.InputSystem.PlayerInput playerInput;
-        public void nTriggerEnter2D(Collider2D collision)
+        public void OnTriggerEnter2D(Collider2D collision) // Fixed spelling error in method name
         {
-            action = playerInput.actions["TouchKeyE"];
-            if (action.WasPerformedThisFrame() && collision.gameObject.CompareTag("Player"))
+            if (touchKeyEAction != null && touchKeyEAction.WasPerformedThisFrame() && collision.gameObject.CompareTag("Player"))
             {
-                if (textToPrint != null )
+                if (textToPrint != null)
                 {
                     textToPrint.enabled = true;
                 }
             }
         }
+
         public void Start()
         {
             if (textToPrint != null)
             {
-                textToPrint.enabled = false; // Masquer l'image au début
+                textToPrint.enabled = false; // Masquer l'image au d�but
             }
         }
-
-
     }
 }
