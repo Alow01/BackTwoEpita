@@ -15,7 +15,7 @@ public class DialogueManager : NetworkBehaviour
         if (dialogueText == null) dialogueText = dialogueBox.GetComponentInChildren<TMP_Text>(); // Recherche le TMP_Text dans les enfants
         
 
-        // Cache le Canvas au d�part
+        // Cache le Canvas au départ
         dialogueBox.SetActive(false);
     }
 
