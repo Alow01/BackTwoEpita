@@ -16,6 +16,7 @@ TagManager:
   - Stone 2 red
   - Stone 3 red
   - Stone 4 red
+  - EmptyChest
   layers:
   - Default
   - TransparentFX

@@ -54,6 +54,7 @@ public class DialogueManager : NetworkBehaviour
           /**  case "Stone 1 blue": return "“♘ SDANA | ♔ ♕ WKH | ♖GHDG | ♕ XQJJUX” \n “♕♖ AMMS |♘♖ NBY |♘♕ DPMVNOT | ♕♕ YP |♖♖ ROMNZ” \n
             A B C D E F G H I J K L M N O P Q R S T U V W X Y Z";**/
             case "Stone 2 blue": return "g";
+            case "EmptyChest": return "This Chest seems empty...";
 
         }
 
