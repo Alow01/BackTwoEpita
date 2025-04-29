@@ -8,15 +8,22 @@ TagManager:
   - Menu
   - MenuButton
   - DialogueBox
-  - CRG
-  - TAG
-  - SHG
-  - Interactable
   - Stone 1 red
   - Stone 2 red
   - Stone 3 red
   - Stone 4 red
   - EmptyChest
+  - Stone 5 red
+  - Stone 6 red
+  - Stone 0 red
+  - Gravestone 1
+  - Gravestone 2
+  - Gravestone 3
+  - Gravestone 4
+  - Gravestone 5
+  - Gravestone 6
+  - Gravestone 7
+  - Gravestone 8
   layers:
   - Default
   - TransparentFX

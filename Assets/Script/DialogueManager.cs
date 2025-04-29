@@ -40,20 +40,25 @@ public class DialogueManager : NetworkBehaviour
         string res = "";
         switch (tag)
         {
-            case "CRG": return "“Vernatius Willigher, 1355-1415 ;  Here lies Vernatius Willigher, Keeper of the Royal Library, Scholar at the Royal Academy and Seeker of Knowledge. His endless quest for wisdom illuminated the realm, yet even his vast knowledge could not uncover the betrayal that doomed the Kingdom”";
-            case "TAG": return "It is a Tall Grave";
-            case "SHG": return "It is a Short Grave";
+            case "Gravestone 1": return "Vernatius Willigher, 1355-1415 :\n  Here lies Vernatius Willigher, Keeper of the Royal Library, Scholar at the Royal Academy and Seeker of Knowledge. His endless quest for wisdom illuminated the realm, yet even his vast knowledge could not uncover the betrayal that doomed the Kingdom";
+            case "Gravestone 2": return "General Radanh, 1366-1415 :\n Stalwart Guardian of the Realm, Master Tactician of the Royal Army, whose wisdom and courage were felled by treachery's poison.";
+            case "Gravestone 3": return "Lord Aldric Blackthorn, 1363-1415 :\n Royal Advisor to the Crown, Keeper of the King's Seal, whose wisdom was lost to the shadows of betrayal.";
+            case "Gravestone 4": return "Lord Arin, 1365-1415 :\n Royal Steward to the Crown, Keeper of the King's Household, whose loyalty was unwavering until the shadows of betrayal claimed him.";
+            case "Gravestone 5": return "Prince Edric, 1390-1415 :\n Crown Prince and Knight of the Realm, whose bright future was extinguished in the flames of rebellion.";
+            case "Gravestone 6": return "Mastein Blackwood, 1368-141 :\n Chronicler of the King’s Deeds and his Kingdom’s Prosperity. He recorded an honorable and glorious reign but could not write its end";
+            case "Gravestone 7": return "Luther Esso, 1372-1415 :\n Here lies Luther Esso, Master of Treaties and Builder of Bridge. His words quelled storms and forged iron bonds, yet even his eloquence could not mend a kingdom torn apart.";
+            case "Gravestone 8": return "Princess Elara, 1375-1415 :\n Sister to the King, Heart of the Realm, whose love for her family and people was boundless, even in death.";
 
-            // for 1srt enigma with pillar and cypher keys
-            case "Stone 1 red": return "Amongst the stones, a soft heavenly voice whispers of guidance for the lost. Perhaps your companion has heard of a similar tale? But her guidance will only befall those who are worthy. \n ♖ = +3";
-            case "Stone 2 red": return "“An ancient king, his face lost to the ages, is said to have mastered a secret language. He twisted words, rearranging their letters, to reveal a hidden truth only those loyal can decipher. Even now, the whispers of the wind carry echoes of his boast, 'Veni, Vidi, Vici'. It is said that the whisperer’s message, too, is veiled in this ancient tongue, its meaning concealed by a similar shift in the essence of the words itself” \n ♕ = +5";
-            case "Stone 3 red": return "♘  = -4";
-            case "Stone 4 red": return "♔ = -2";
-            case "Stone 5 red": return "♘♖ = -1";
+            // for 1srt enigma with pillar 
+            case "Stone 0 red": return "She was the kingdom’s heart, her love enduring beyond the grave, a beacon in the darkness.";
+            case "Stone 1 red": return "His quest for truth lit the halls of learning, yet treachery flourished unseen in his shadow";
+            case "Stone 2 red": return "He chronicled glory and sorrow, but the last page was stolen by fate’s cruel hand";
+            case "Stone 3 red": return "His courage steered armies, but poison, not blade, ended his watch";
+            case "Stone 4 red": return "Ever faithful, he kept the king’s house safe-until betrayal dimmed his steadfast ligh";
+            case "Stone 5 red": return "???";
+            case "Stone 6 red": return "???";
 
-          /**  case "Stone 1 blue": return "“♘ SDANA | ♔ ♕ WKH | ♖GHDG | ♕ XQJJUX” \n “♕♖ AMMS |♘♖ NBY |♘♕ DPMVNOT | ♕♕ YP |♖♖ ROMNZ” \n
-            A B C D E F G H I J K L M N O P Q R S T U V W X Y Z";**/
-            case "Stone 2 blue": return "g";
+
             case "EmptyChest": return "This Chest seems empty...";
 
         }

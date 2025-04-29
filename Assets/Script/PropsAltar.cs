@@ -14,6 +14,8 @@ namespace Cainos.PixelArtTopDown_Basic
         private Color curColor;
         private Color targetColor;
 
+
+
         private void Awake()
         {
             targetColor = runes[0].color;

@@ -1,10 +1,6 @@
-﻿using Mirror.Examples.BilliardsPredicted;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.Rendering;
-using UnityEngine.UI;
 
 namespace Cainos.PixelArtTopDown_Basic
 {
@@ -12,29 +8,20 @@ namespace Cainos.PixelArtTopDown_Basic
     //used in the stair objects for player to travel between layers
     public class LayerTrigger : MonoBehaviour
     {
-        public Image textToPrint;
-        public InputAction action;
+        public string layer;
+        public string sortingLayer;
 
-        public UnityEngine.InputSystem.PlayerInput playerInput;
-        public void nTriggerEnter2D(Collider2D collision)
+        private void OnTriggerExit2D(Collider2D other)
         {
-            action = playerInput.actions["TouchKeyE"];
-            if (action.WasPerformedThisFrame() && collision.gameObject.CompareTag("Player"))
+            other.gameObject.layer = LayerMask.NameToLayer(layer);
+
+            other.gameObject.GetComponent<SpriteRenderer>().sortingLayerName = sortingLayer;
+            SpriteRenderer[] srs = other.gameObject.GetComponentsInChildren<SpriteRenderer>();
+            foreach (SpriteRenderer sr in srs)
             {
-                if (textToPrint != null )
-                {
-                    textToPrint.enabled = true;
-                }
+                sr.sortingLayerName = sortingLayer;
             }
         }
-        public void Start()
-        {
-            if (textToPrint != null)
-            {
-                textToPrint.enabled = false; // Masquer l'image au début
-            }
-        }
-
 
     }
 }

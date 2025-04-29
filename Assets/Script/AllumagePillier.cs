@@ -5,6 +5,7 @@ public class AllumagePillier : MonoBehaviour
 {
     public GameObject Pillier;
     public InputAction touchKeyEAction;
+    private bool activate;
 
     private void OnEnable()
     {
@@ -18,24 +19,31 @@ public class AllumagePillier : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        Transform glowTransform = Pillier.transform.Find("Glow");
         if (collision.gameObject.CompareTag("Player"))
         {
-            // Detect key press
-            touchKeyEAction.performed += ctx =>
+            // Subscribe to the event only once
+            touchKeyEAction.performed -= HandleKeyPress;
+            touchKeyEAction.performed += HandleKeyPress;
+        }
+    }
+
+    private void HandleKeyPress(InputAction.CallbackContext ctx)
+    {
+        Transform glowTransform = Pillier.transform.Find("Glow");
+        if (glowTransform != null)
+        {
+            if (!activate)
             {
-                if (glowTransform != null)
-                {
-                    glowTransform.gameObject.SetActive(true); // Allume le glow
-                }
-            };
-            touchKeyEAction.performed += ctx =>
+                glowTransform.gameObject.SetActive(true); // Turn on the glow
+                Debug.Log("Glow object activated");
+                activate = true;
+            }
+            else
             {
-                if (glowTransform != null && glowTransform.gameObject.activeSelf)
-                {
-                    glowTransform.gameObject.SetActive(true); // Allume le glow
-                }
-            };
+                glowTransform.gameObject.SetActive(false); // Turn off the glow
+                Debug.Log("Glow object deactivated");
+                activate = false;
+            }
         }
     }
 
@@ -44,8 +52,8 @@ public class AllumagePillier : MonoBehaviour
         Transform glowTransform = Pillier.transform.Find("Glow");
         if (glowTransform != null)
         {
-            Debug.Log("Glow object found");
             glowTransform.gameObject.SetActive(false);
         }
+        activate = false;
     }
 }
