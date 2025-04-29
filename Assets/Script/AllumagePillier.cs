@@ -6,18 +6,36 @@ public class AllumagePillier : MonoBehaviour
     public GameObject Pillier;
     public InputAction touchKeyEAction;
 
+    private void OnEnable()
+    {
+        touchKeyEAction.Enable();
+    }
+
+    private void OnDisable()
+    {
+        touchKeyEAction.Disable();
+    }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("OnTriggerEnter2D method called");
         Transform glowTransform = Pillier.transform.Find("Glow");
-        if (touchKeyEAction != null && touchKeyEAction.WasPerformedThisFrame() && collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Player entered trigger and E key was pressed");
-            if (glowTransform != null)
+            // Detect key press
+            touchKeyEAction.performed += ctx =>
             {
-                glowTransform.gameObject.SetActive(true);
-            }
+                if (glowTransform != null)
+                {
+                    glowTransform.gameObject.SetActive(true); // Allume le glow
+                }
+            };
+            touchKeyEAction.performed += ctx =>
+            {
+                if (glowTransform != null && glowTransform.gameObject.activeSelf)
+                {
+                    glowTransform.gameObject.SetActive(true); // Allume le glow
+                }
+            };
         }
     }
 
