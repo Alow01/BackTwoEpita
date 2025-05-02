@@ -5,7 +5,8 @@ public class AllumagePillier : MonoBehaviour
 {
     public GameObject Pillier;
     public InputAction touchKeyEAction;
-    private bool activate;
+    public bool activate =false;
+    public bool IsInRange = false;
 
     private void OnEnable()
     {
@@ -22,27 +23,42 @@ public class AllumagePillier : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             // Subscribe to the event only once
+            IsInRange = true;
             touchKeyEAction.performed -= HandleKeyPress;
             touchKeyEAction.performed += HandleKeyPress;
         }
     }
 
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // Unsubscribe from the event when the player exits the trigger
+            IsInRange = false;
+            touchKeyEAction.performed -= HandleKeyPress;
+        }
+    }
+
+
     private void HandleKeyPress(InputAction.CallbackContext ctx)
     {
-        Transform glowTransform = Pillier.transform.Find("Glow");
-        if (glowTransform != null)
-        {
-            if (!activate)
+        if (IsInRange) 
+        { 
+            Transform glowTransform = Pillier.transform.Find("Glow");
+            if (glowTransform != null)
             {
-                glowTransform.gameObject.SetActive(true); // Turn on the glow
-                Debug.Log("Glow object activated");
-                activate = true;
-            }
-            else
-            {
-                glowTransform.gameObject.SetActive(false); // Turn off the glow
-                Debug.Log("Glow object deactivated");
-                activate = false;
+                if (!activate)
+                {
+                    glowTransform.gameObject.SetActive(true); // Turn on the glow
+                    Debug.Log("Glow object activated");
+                    activate = true;
+                }
+                else
+                {
+                    glowTransform.gameObject.SetActive(false); // Turn off the glow
+                    Debug.Log("Glow object deactivated");
+                    activate = false;
+                }
             }
         }
     }

@@ -1,20 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 
 public class Enigme1Medieval : MonoBehaviour
 {
-    public List<SpriteRenderer> runes;
     public float lerpSpeed;
+    public GameObject porte;
 
-    private Color curColor;
-    private Color targetColor;
 
     public List<GameObject> Pilliers;
 
-    public List<List<int>> ordrePilliersRandom = new List<List<int>> {new List<int> {0,1,2,3,4,5,6},
+    public List<List<int>> ordrePilliersRandom = new List<List<int>> {new List<int> {0,6,3,5,1,2,4},
                                                                       new List<int> {6,5,2,4,0,3,1},
                                                                       new List<int> {3,1,4,6,2,0,5},
                                                                       new List<int> {5,0,3,6,1,4,2},
@@ -32,8 +31,9 @@ public class Enigme1Medieval : MonoBehaviour
     {
         ordrePilliers = ordrePilliersRandom[Random.Range(0, ordrePilliersRandom.Count)];
         PilliersActive= new List<int>();
-        targetColor = runes[0].color;
         fini = false;
+        
+
     }
 
    
@@ -42,28 +42,31 @@ public class Enigme1Medieval : MonoBehaviour
     {
         if (!fini)
         {
-           /* int i = 0;
+            int i = 0;
             foreach (GameObject Pillier in Pilliers) // ajoute a la liste les pilliers dans l'ordre de leur activation
             {
                 Transform glowTransform = Pillier.transform.Find("Glow");
-                if (glowTransform.gameObject.activeSelf)    // erreur ici : activeSelf renvoie true au lieu de false  !!!! 
+                if ( glowTransform.gameObject.activeSelf)   
                 {
-                    Debug.Log("Pillier " + i + " is active");
-                    PilliersActive.Add(i);
+                    if (!PilliersActive.Contains(i))
+                    {
+                        Debug.Log("Pillier " + i + " is active");
+                        PilliersActive.Add(i);
+                    }
                 }
                 else
                 {
                     if (PilliersActive.Contains(i)) PilliersActive.Remove(i);
                 }
                 i++;
-            }*/ // a régler !!!! 
+            }
 
-            if (PilliersActive.Count == 7)
+            if (PilliersActive.Count >= 7)
             {
-                if (PilliersActive == ordrePilliers) // ordre bon : reussite de l'énigme
+                if (PilliersActive.SequenceEqual(ordrePilliers)) // ordre bon : reussite de l'énigme
                 {
                     StartCoroutine(ClignoterPilliers()); // fait clignoter les pilliers 
-                    targetColor.a = 1.0f;
+                    porte.SetActive(false); // ouvre la porte
                     fini = true;
                 }
                 else // ordre d'allumage faux
@@ -73,16 +76,10 @@ public class Enigme1Medieval : MonoBehaviour
                         Transform glowTransform = Pillier.transform.Find("Glow");
                         glowTransform.gameObject.SetActive(false);
                     }
-                    targetColor.a = 0.0f;
                 }
             }
 
-            curColor = Color.Lerp(curColor, targetColor, lerpSpeed * Time.deltaTime);
-
-            foreach (var r in runes)
-            {
-                r.color = curColor;
-            }
+          
         }
     }
 
