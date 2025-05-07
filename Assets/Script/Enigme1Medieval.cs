@@ -4,13 +4,14 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
+using static UnityEngine.ParticleSystem;
 
 public class Enigme1Medieval : MonoBehaviour
 {
     public float lerpSpeed;
     public GameObject porte;
-
-
+    public List<GameObject> Lanterns;
+    public ParticleSystem particleSystem;
     public List<GameObject> Pilliers;
 
     public List<List<int>> ordrePilliersRandom = new List<List<int>> {new List<int> {0,6,3,5,1,2,4},
@@ -24,16 +25,17 @@ public class Enigme1Medieval : MonoBehaviour
 
     public List<int> ordrePilliers;
     public List<int> PilliersActive;
-
+    public AudioClip successAudio = null;
+    public AudioClip failureAudio = null;
     private bool fini;
+    private AudioSource audioSources;
 
     private void Start()
     {
         ordrePilliers = ordrePilliersRandom[Random.Range(0, ordrePilliersRandom.Count)];
-        PilliersActive= new List<int>();
+        PilliersActive = new List<int>();
         fini = false;
-        
-
+        particleSystem.gameObject.SetActive(false);
     }
 
    
@@ -68,9 +70,27 @@ public class Enigme1Medieval : MonoBehaviour
                     StartCoroutine(ClignoterPilliers()); // fait clignoter les pilliers 
                     porte.SetActive(false); // ouvre la porte
                     fini = true;
+                    if (successAudio!=null)
+                    {
+                        audioSources.clip = successAudio;
+                        audioSources.Play(); // joue le son de reussite
+                        audioSources.Stop();
+                    } 
+                    foreach (GameObject lant in Lanterns)
+                    {
+                        lant.transform.Find("Particle System").gameObject.SetActive(false); // éteint les lanternes
+                        lant.transform.Find("Square").gameObject.SetActive(false);
+                    }
+                    particleSystem.gameObject.SetActive(true); // active le systeme de particule
                 }
                 else // ordre d'allumage faux
                 {
+                    if (failureAudio != null)
+                    {
+                        audioSources.clip = failureAudio;
+                        audioSources.Play(); // joue le son d'echec
+                        audioSources.Stop();
+                    } 
                     foreach (GameObject Pillier in Pilliers) // éteint les pilliers
                     {
                         Transform glowTransform = Pillier.transform.Find("Glow");

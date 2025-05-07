@@ -15,8 +15,7 @@ public class Enigme2Medieval : MonoBehaviour
     public int i;
     public bool IsPlay;
     private Stopwatch chrono;
-    public long interval = 5000;
-    public List<SpriteRenderer> runes;
+    public long interval = 10000;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -65,8 +64,6 @@ public class Enigme2Medieval : MonoBehaviour
                 i = 0;
                 chrono.Stop();
             }
-
-
             else if (feu_foleys[i].gameObject.GetComponentInChildren<Feu_foley>().isTouch)
             {
                 chrono.Stop();
