@@ -22,6 +22,8 @@ namespace Cainos.PixelArtTopDown_Basic
 
         public DialogueManager dialogueManager; // Référence au DialogueManager
         public string dialogueMessage = "Test";
+        
+        EgypteEnigma2 wellM;
 
         void FindObject()
         {
@@ -44,6 +46,7 @@ namespace Cainos.PixelArtTopDown_Basic
             InteractAction.Enable();
             MoveAction.Enable();
             rigidbody2d = GetComponent<Rigidbody2D>();
+            wellM = GameObject.FindGameObjectWithTag("WellM").GetComponent<EgypteEnigma2>();
         }
 
 
@@ -96,6 +99,12 @@ namespace Cainos.PixelArtTopDown_Basic
         {
             if (isLocalPlayer)
             {
+                if (tag == "EgypteEnigma1Map")
+                {
+                    ShowMapEnigma();
+                    return;
+                }
+                if (tag.Contains("Well")) WellM(tag);
                 dialogueManager.RpcShowDialogue(tag);
             }
         }
@@ -106,6 +115,16 @@ namespace Cainos.PixelArtTopDown_Basic
             {
                 dialogueManager.HideDialogue();
             }
+        }
+
+        public void ShowMapEnigma()
+        {
+            Debug.Log("Affiche map...");
+        }
+
+        public void WellM(string tag)
+        {
+            wellM.AddToQueue(tag);
         }
     }
 }

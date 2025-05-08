@@ -20,7 +20,6 @@ public class TPManager : MonoBehaviour
             }
         }
     }
-
     public void GoEgypte()
     {
         players = GameObject.FindGameObjectsWithTag("Player");
@@ -28,11 +27,11 @@ public class TPManager : MonoBehaviour
         {
             if (p.GetComponent<PlayerSetup>().playerRole == "Player 1")
             {
-                p.transform.position = new Vector2(0, -106);
+                p.transform.position = new Vector2(2, -105);
             }
             if (p.GetComponent<PlayerSetup>().playerRole == "Player 2")
             {
-                p.transform.position = new Vector2(70, -115);
+                p.transform.position = new Vector2(70, -130);
             }
         }
     }

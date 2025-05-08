@@ -32,7 +32,7 @@ public class EgSymbManager : MonoBehaviour
             if (condition) {
                 Debug.Log("All symbols has been press at the same time -> Success enigma -> Door P2 is now open");
                 hasBeenOpen = true;
-                door.GetComponent<Transform>().position = new Vector3(100,-100,0);
+                MoveDoor();               
             }
         }
 
@@ -66,5 +66,9 @@ public class EgSymbManager : MonoBehaviour
         Debug.Log($"Pressure plate {name} has been released !");
     }
 
+    private void MoveDoor()
+    {
+        door.GetComponent<Transform>().position = new Vector3(200, -200, 0);
+    }
 
 }

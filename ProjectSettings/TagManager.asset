@@ -25,6 +25,12 @@ TagManager:
   - Gravestone 7
   - Gravestone 8
   - Enigme1
+  - EgypteEnigma1Map
+  - WellTambourin
+  - WellFlute
+  - WellHarpe
+  - WellM
+  - ConsigneEgypteEnigma2
   layers:
   - Default
   - TransparentFX

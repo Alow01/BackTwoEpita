@@ -31,7 +31,7 @@ public class DialogueManager : NetworkBehaviour
     }
 
     // M�thode RPC pour afficher le dialogue
-    [ClientRpc]
+    //[ClientRpc]
     public void RpcShowDialogue(string tag)
     {
         if (dialogueBox == null) dialogueBox = GameObject.FindGameObjectWithTag("DialogueBox");
@@ -246,8 +246,11 @@ public class DialogueManager : NetworkBehaviour
         switch (tag)
         {
             case "EmptyChest": return "This Chest seems empty...";
-
+            case "FailEgypteEnigma2": return "You FAILED, you must select each well in the correct order !";
+            case "SuccessEgypteEnigma2": return "Congratulations, you achieved the enigma ! You have been teleported in the Medieval era !";
+            case "ConsigneEgypteEnigma2": return "Your team-mate must find a magic well which will played different sound, you must select each well in the right order !";
         }
+        if (tag.Contains("Well")) return "You added this sound in the queue.";
         return "";
 
     }
