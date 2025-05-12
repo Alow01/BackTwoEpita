@@ -31,6 +31,8 @@ TagManager:
   - WellHarpe
   - WellM
   - ConsigneEgypteEnigma2
+  - ConsigneMedievalEnigma1Perso1
+  - ConsigneMedievalEnigma1Perso2
   layers:
   - Default
   - TransparentFX

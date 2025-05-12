@@ -13,6 +13,8 @@ public class Enigme1Medieval : MonoBehaviour
     public List<GameObject> Lanterns;
     public ParticleSystem particleSystem;
     public List<GameObject> Pilliers;
+    public ParticleSystem particleConsigne1;
+    public ParticleSystem particleConsigne2;
 
     public List<List<int>> ordrePilliersRandom = new List<List<int>> {new List<int> {0,6,3,5,1,2,4},
                                                                       new List<int> {6,5,2,4,0,3,1},
@@ -81,6 +83,8 @@ public class Enigme1Medieval : MonoBehaviour
                         lant.transform.Find("Particle System").gameObject.SetActive(false); // éteint les lanternes
                         lant.transform.Find("Square").gameObject.SetActive(false);
                     }
+                    particleConsigne1.gameObject.SetActive(false); // desactive les systemes de particules des consignes
+                    particleConsigne2.gameObject.SetActive(false);
                     particleSystem.gameObject.SetActive(true); // active le systeme de particule
                 }
                 else // ordre d'allumage faux

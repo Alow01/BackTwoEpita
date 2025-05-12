@@ -76,14 +76,14 @@ public class DialogueManager : NetworkBehaviour
                     {
                         switch (tag)
                         {
-                            case "Gravestone 6": return "Vernatius Willigher, 1369-1415 :\n  Here lies Vernatius Willigher, Keeper of the Royal Library, Scholar at the Royal Academy and Seeker of Knowledge. His endless quest for wisdom illuminated the realm, yet even his vast knowledge could not uncover the betrayal that doomed the Kingdom";
-                            case "Gravestone 5": return "General Radanh, 1362-1415 :\n Stalwart Guardian of the Realm, Master Tactician of the Royal Army, whose wisdom and courage were felled by treachery's poison.";
-                            case "Gravestone 2": return "Lord Aldric Blackthorn, 1363-1415 :\n Royal Advisor to the Crown, Keeper of the King's Seal, whose wisdom was lost to the shadows of betrayal.";
-                            case "Gravestone 8": return "Lord Arin, 1372-1415 :\n Royal Steward to the Crown, Keeper of the King's Household, whose loyalty was unwavering until the shadows of betrayal claimed him.";
-                            case "Gravestone 4": return "Prince Edric, 1359-1415 :\n Crown Prince and Knight of the Realm, whose bright future was extinguished in the flames of rebellion.";
-                            case "Gravestone 7": return "Mastein Blackwood, 1370-1415 :\n Chronicler of the King’s Deeds and his Kingdom’s Prosperity. He recorded an honorable and glorious reign but could not write its end";
-                            case "Gravestone 1": return "Luther Esso, 1356-1415 :\n Here lies Luther Esso, Master of Treaties and Builder of Bridge. His words quelled storms and forged iron bonds, yet even his eloquence could not mend a kingdom torn apart.";
-                            case "Gravestone 3": return "Princess Elara, 1352-1415 :\n Sister to the King, Heart of the Realm, whose love for her family and people was boundless, even in death.";
+                            case "Gravestone 6": return "Vernatius Willigher, 1369-1415 :\nHere lies Vernatius Willigher, Keeper of the Royal Library, Scholar at the Royal Academy and Seeker of Knowledge. His endless quest for wisdom illuminated the realm, yet even his vast knowledge could not uncover the betrayal that doomed the Kingdom";
+                            case "Gravestone 5": return "General Radanh, 1362-1415 :\nStalwart Guardian of the Realm, Master Tactician of the Royal Army, whose wisdom and courage were felled by treachery's poison.";
+                            case "Gravestone 2": return "Lord Aldric Blackthorn, 1363-1415 :\nRoyal Advisor to the Crown, Keeper of the King's Seal, whose wisdom was lost to the shadows of betrayal.";
+                            case "Gravestone 8": return "Lord Arin, 1372-1415 :\nRoyal Steward to the Crown, Keeper of the King's Household, whose loyalty was unwavering until the shadows of betrayal claimed him.";
+                            case "Gravestone 4": return "Prince Edric, 1359-1415 :\nCrown Prince and Knight of the Realm, whose bright future was extinguished in the flames of rebellion.";
+                            case "Gravestone 7": return "Mastein Blackwood, 1370-1415 :\nChronicler of the King’s Deeds and his Kingdom’s Prosperity. He recorded an honorable and glorious reign but could not write its end";
+                            case "Gravestone 1": return "Luther Esso, 1356-1415 :\nHere lies Luther Esso, Master of Treaties and Builder of Bridge. His words quelled storms and forged iron bonds, yet even his eloquence could not mend a kingdom torn apart.";
+                            case "Gravestone 3": return "Princess Elara, 1352-1415 :\nSister to the King, Heart of the Realm, whose love for her family and people was boundless, even in death.";
 
                             // for 1srt enigma with pillar 
                             case "Stone 0 red": return "She was the kingdom’s heart, her love enduring beyond the grave, a beacon in the darkness."; // Princess Elara
@@ -100,14 +100,14 @@ public class DialogueManager : NetworkBehaviour
                     {
                         switch (tag)
                         {
-                            case "Gravestone 6": return "Vernatius Willigher, 1355-1415 :\n  Here lies Vernatius Willigher, Keeper of the Royal Library, Scholar at the Royal Academy and Seeker of Knowledge. His endless quest for wisdom illuminated the realm, yet even his vast knowledge could not uncover the betrayal that doomed the Kingdom";
-                            case "Gravestone 5": return "General Radanh, 1358-1415 :\n Stalwart Guardian of the Realm, Master Tactician of the Royal Army, whose wisdom and courage were felled by treachery's poison.";
-                            case "Gravestone 2": return "Lord Aldric Blackthorn, 1363-1415 :\n Royal Advisor to the Crown, Keeper of the King's Seal, whose wisdom was lost to the shadows of betrayal.";
-                            case "Gravestone 8": return "Lord Arin, 1371-1415 :\n Royal Steward to the Crown, Keeper of the King's Household, whose loyalty was unwavering until the shadows of betrayal claimed him.";
-                            case "Gravestone 4": return "Prince Edric, 1390-1415 :\n Crown Prince and Knight of the Realm, whose bright future was extinguished in the flames of rebellion.";
-                            case "Gravestone 7": return "Mastein Blackwood, 1374-1415 :\n Chronicler of the King’s Deeds and his Kingdom’s Prosperity. He recorded an honorable and glorious reign but could not write its end";
-                            case "Gravestone 1": return "Luther Esso, 1370-1415 :\n Here lies Luther Esso, Master of Treaties and Builder of Bridge. His words quelled storms and forged iron bonds, yet even his eloquence could not mend a kingdom torn apart.";
-                            case "Gravestone 3": return "Princess Elara, 1364-1415 :\n Sister to the King, Heart of the Realm, whose love for her family and people was boundless, even in death.";
+                            case "Gravestone 6": return "Vernatius Willigher, 1355-1415 :\nHere lies Vernatius Willigher, Keeper of the Royal Library, Scholar at the Royal Academy and Seeker of Knowledge. His endless quest for wisdom illuminated the realm, yet even his vast knowledge could not uncover the betrayal that doomed the Kingdom";
+                            case "Gravestone 5": return "General Radanh, 1358-1415 :\nStalwart Guardian of the Realm, Master Tactician of the Royal Army, whose wisdom and courage were felled by treachery's poison.";
+                            case "Gravestone 2": return "Lord Aldric Blackthorn, 1363-1415 :\nRoyal Advisor to the Crown, Keeper of the King's Seal, whose wisdom was lost to the shadows of betrayal.";
+                            case "Gravestone 8": return "Lord Arin, 1371-1415 :\nRoyal Steward to the Crown, Keeper of the King's Household, whose loyalty was unwavering until the shadows of betrayal claimed him.";
+                            case "Gravestone 4": return "Prince Edric, 1390-1415 :\nCrown Prince and Knight of the Realm, whose bright future was extinguished in the flames of rebellion.";
+                            case "Gravestone 7": return "Mastein Blackwood, 1374-1415 :\nChronicler of the King’s Deeds and his Kingdom’s Prosperity. He recorded an honorable and glorious reign but could not write its end";
+                            case "Gravestone 1": return "Luther Esso, 1370-1415 :\nHere lies Luther Esso, Master of Treaties and Builder of Bridge. His words quelled storms and forged iron bonds, yet even his eloquence could not mend a kingdom torn apart.";
+                            case "Gravestone 3": return "Princess Elara, 1364-1415 :\nSister to the King, Heart of the Realm, whose love for her family and people was boundless, even in death.";
 
                             // for 1srt enigma with pillar 
                             case "Stone 0 red": return "She was the kingdom’s heart, her love enduring beyond the grave, a beacon in the darkness."; // Princess Elara
@@ -125,14 +125,14 @@ public class DialogueManager : NetworkBehaviour
                     {
                         switch (tag)
                         {
-                            case "Gravestone 6": return "Vernatius Willigher, 1369-1415 :\n  Here lies Vernatius Willigher, Keeper of the Royal Library, Scholar at the Royal Academy and Seeker of Knowledge. His endless quest for wisdom illuminated the realm, yet even his vast knowledge could not uncover the betrayal that doomed the Kingdom";
-                            case "Gravestone 5": return "General Radanh, 1366-1415 :\n Stalwart Guardian of the Realm, Master Tactician of the Royal Army, whose wisdom and courage were felled by treachery's poison.";
-                            case "Gravestone 2": return "Lord Aldric Blackthorn, 1370-1415 :\n Royal Advisor to the Crown, Keeper of the King's Seal, whose wisdom was lost to the shadows of betrayal.";
-                            case "Gravestone 8": return "Lord Arin, 1365-1415 :\n Royal Steward to the Crown, Keeper of the King's Household, whose loyalty was unwavering until the shadows of betrayal claimed him.";
-                            case "Gravestone 4": return "Prince Edric, 1370-1415 :\n Crown Prince and Knight of the Realm, whose bright future was extinguished in the flames of rebellion.";
-                            case "Gravestone 7": return "Mastein Blackwood, 1363-1415 :\n Chronicler of the King’s Deeds and his Kingdom’s Prosperity. He recorded an honorable and glorious reign but could not write its end";
-                            case "Gravestone 1": return "Luther Esso, 1366-1415 :\n Here lies Luther Esso, Master of Treaties and Builder of Bridge. His words quelled storms and forged iron bonds, yet even his eloquence could not mend a kingdom torn apart.";
-                            case "Gravestone 3": return "Princess Elara, 1375-1415 :\n Sister to the King, Heart of the Realm, whose love for her family and people was boundless, even in death.";
+                            case "Gravestone 6": return "Vernatius Willigher, 1369-1415 :\nHere lies Vernatius Willigher, Keeper of the Royal Library, Scholar at the Royal Academy and Seeker of Knowledge. His endless quest for wisdom illuminated the realm, yet even his vast knowledge could not uncover the betrayal that doomed the Kingdom";
+                            case "Gravestone 5": return "General Radanh, 1366-1415 :\nStalwart Guardian of the Realm, Master Tactician of the Royal Army, whose wisdom and courage were felled by treachery's poison.";
+                            case "Gravestone 2": return "Lord Aldric Blackthorn, 1370-1415 :\nRoyal Advisor to the Crown, Keeper of the King's Seal, whose wisdom was lost to the shadows of betrayal.";
+                            case "Gravestone 8": return "Lord Arin, 1365-1415 :\nRoyal Steward to the Crown, Keeper of the King's Household, whose loyalty was unwavering until the shadows of betrayal claimed him.";
+                            case "Gravestone 4": return "Prince Edric, 1370-1415 :\nCrown Prince and Knight of the Realm, whose bright future was extinguished in the flames of rebellion.";
+                            case "Gravestone 7": return "Mastein Blackwood, 1363-1415 :\nChronicler of the King’s Deeds and his Kingdom’s Prosperity. He recorded an honorable and glorious reign but could not write its end";
+                            case "Gravestone 1": return "Luther Esso, 1366-1415 :\nHere lies Luther Esso, Master of Treaties and Builder of Bridge. His words quelled storms and forged iron bonds, yet even his eloquence could not mend a kingdom torn apart.";
+                            case "Gravestone 3": return "Princess Elara, 1375-1415 :\nSister to the King, Heart of the Realm, whose love for her family and people was boundless, even in death.";
 
                             // for 1srt enigma with pillar 
                             case "Stone 0 red": return "She was the kingdom’s heart, her love enduring beyond the grave, a beacon in the darkness."; // Princess Elara
@@ -149,14 +149,14 @@ public class DialogueManager : NetworkBehaviour
                     { 
                         switch (tag)
                         {
-                            case "Gravestone 6": return "Vernatius Willigher, 1355-1415 :\n  Here lies Vernatius Willigher, Keeper of the Royal Library, Scholar at the Royal Academy and Seeker of Knowledge. His endless quest for wisdom illuminated the realm, yet even his vast knowledge could not uncover the betrayal that doomed the Kingdom";
-                            case "Gravestone 5": return "General Radanh, 1350-1415 :\n Stalwart Guardian of the Realm, Master Tactician of the Royal Army, whose wisdom and courage were felled by treachery's poison.";
-                            case "Gravestone 2": return "Lord Aldric Blackthorn, 1363-1415 :\n Royal Advisor to the Crown, Keeper of the King's Seal, whose wisdom was lost to the shadows of betrayal.";
-                            case "Gravestone 8": return "Lord Arin, 1362-1415 :\n Royal Steward to the Crown, Keeper of the King's Household, whose loyalty was unwavering until the shadows of betrayal claimed him.";
-                            case "Gravestone 4": return "Prince Edric, 1380-1415 :\n Crown Prince and Knight of the Realm, whose bright future was extinguished in the flames of rebellion.";
-                            case "Gravestone 7": return "Mastein Blackwood, 1368-1415 :\n Chronicler of the King’s Deeds and his Kingdom’s Prosperity. He recorded an honorable and glorious reign but could not write its end";
-                            case "Gravestone 1": return "Luther Esso, 1365-1415 :\n Here lies Luther Esso, Master of Treaties and Builder of Bridge. His words quelled storms and forged iron bonds, yet even his eloquence could not mend a kingdom torn apart.";
-                            case "Gravestone 3": return "Princess Elara, 1376-1415 :\n Sister to the King, Heart of the Realm, whose love for her family and people was boundless, even in death.";
+                            case "Gravestone 6": return "Vernatius Willigher, 1355-1415 :\nHere lies Vernatius Willigher, Keeper of the Royal Library, Scholar at the Royal Academy and Seeker of Knowledge. His endless quest for wisdom illuminated the realm, yet even his vast knowledge could not uncover the betrayal that doomed the Kingdom";
+                            case "Gravestone 5": return "General Radanh, 1350-1415 :\nStalwart Guardian of the Realm, Master Tactician of the Royal Army, whose wisdom and courage were felled by treachery's poison.";
+                            case "Gravestone 2": return "Lord Aldric Blackthorn, 1363-1415 :\nRoyal Advisor to the Crown, Keeper of the King's Seal, whose wisdom was lost to the shadows of betrayal.";
+                            case "Gravestone 8": return "Lord Arin, 1362-1415 :\nRoyal Steward to the Crown, Keeper of the King's Household, whose loyalty was unwavering until the shadows of betrayal claimed him.";
+                            case "Gravestone 4": return "Prince Edric, 1380-1415 :\nCrown Prince and Knight of the Realm, whose bright future was extinguished in the flames of rebellion.";
+                            case "Gravestone 7": return "Mastein Blackwood, 1368-1415 :\nChronicler of the King’s Deeds and his Kingdom’s Prosperity. He recorded an honorable and glorious reign but could not write its end";
+                            case "Gravestone 1": return "Luther Esso, 1365-1415 :\nHere lies Luther Esso, Master of Treaties and Builder of Bridge. His words quelled storms and forged iron bonds, yet even his eloquence could not mend a kingdom torn apart.";
+                            case "Gravestone 3": return "Princess Elara, 1376-1415 :\nSister to the King, Heart of the Realm, whose love for her family and people was boundless, even in death.";
 
                             // for 1srt enigma with pillar 
                             case "Stone 0 red": return "She was the kingdom’s heart, her love enduring beyond the grave, a beacon in the darkness."; // Princess Elara
@@ -173,14 +173,14 @@ public class DialogueManager : NetworkBehaviour
                     {
                         switch (tag)
                         {
-                            case "Gravestone 6": return "Vernatius Willigher, 1372-1415 :\n  Here lies Vernatius Willigher, Keeper of the Royal Library, Scholar at the Royal Academy and Seeker of Knowledge. His endless quest for wisdom illuminated the realm, yet even his vast knowledge could not uncover the betrayal that doomed the Kingdom";
-                            case "Gravestone 5": return "General Radanh, 1375-1415 :\n Stalwart Guardian of the Realm, Master Tactician of the Royal Army, whose wisdom and courage were felled by treachery's poison.";
-                            case "Gravestone 2": return "Lord Aldric Blackthorn, 1370-1415 :\n Royal Advisor to the Crown, Keeper of the King's Seal, whose wisdom was lost to the shadows of betrayal.";
-                            case "Gravestone 8": return "Lord Arin, 1358-1415 :\n Royal Steward to the Crown, Keeper of the King's Household, whose loyalty was unwavering until the shadows of betrayal claimed him.";
-                            case "Gravestone 4": return "Prince Edric, 1366-1415 :\n Crown Prince and Knight of the Realm, whose bright future was extinguished in the flames of rebellion.";
-                            case "Gravestone 7": return "Mastein Blackwood, 1368-1415 :\n Chronicler of the King’s Deeds and his Kingdom’s Prosperity. He recorded an honorable and glorious reign but could not write its end";
-                            case "Gravestone 1": return "Luther Esso, 1360-1415 :\n Here lies Luther Esso, Master of Treaties and Builder of Bridge. His words quelled storms and forged iron bonds, yet even his eloquence could not mend a kingdom torn apart.";
-                            case "Gravestone 3": return "Princess Elara, 1375-1415 :\n Sister to the King, Heart of the Realm, whose love for her family and people was boundless, even in death.";
+                            case "Gravestone 6": return "Vernatius Willigher, 1372-1415 :\nHere lies Vernatius Willigher, Keeper of the Royal Library, Scholar at the Royal Academy and Seeker of Knowledge. His endless quest for wisdom illuminated the realm, yet even his vast knowledge could not uncover the betrayal that doomed the Kingdom";
+                            case "Gravestone 5": return "General Radanh, 1375-1415 :\nStalwart Guardian of the Realm, Master Tactician of the Royal Army, whose wisdom and courage were felled by treachery's poison.";
+                            case "Gravestone 2": return "Lord Aldric Blackthorn, 1370-1415 :\nRoyal Advisor to the Crown, Keeper of the King's Seal, whose wisdom was lost to the shadows of betrayal.";
+                            case "Gravestone 8": return "Lord Arin, 1358-1415 :\nRoyal Steward to the Crown, Keeper of the King's Household, whose loyalty was unwavering until the shadows of betrayal claimed him.";
+                            case "Gravestone 4": return "Prince Edric, 1366-1415 :\nCrown Prince and Knight of the Realm, whose bright future was extinguished in the flames of rebellion.";
+                            case "Gravestone 7": return "Mastein Blackwood, 1368-1415 :\nChronicler of the King’s Deeds and his Kingdom’s Prosperity. He recorded an honorable and glorious reign but could not write its end";
+                            case "Gravestone 1": return "Luther Esso, 1360-1415 :\nHere lies Luther Esso, Master of Treaties and Builder of Bridge. His words quelled storms and forged iron bonds, yet even his eloquence could not mend a kingdom torn apart.";
+                            case "Gravestone 3": return "Princess Elara, 1375-1415 :\nSister to the King, Heart of the Realm, whose love for her family and people was boundless, even in death.";
 
                             // for 1srt enigma with pillar 
                             case "Stone 0 red": return "He was the future of the realm, brave and noble—but rebellion claimed him before he could wear the crown."; // Prince Edric
@@ -197,14 +197,14 @@ public class DialogueManager : NetworkBehaviour
                     {
                         switch (tag)
                         {
-                            case "Gravestone 6": return "Vernatius Willigher, 1355-1415 :\n  Here lies Vernatius Willigher, Keeper of the Royal Library, Scholar at the Royal Academy and Seeker of Knowledge. His endless quest for wisdom illuminated the realm, yet even his vast knowledge could not uncover the betrayal that doomed the Kingdom";
-                            case "Gravestone 5": return "General Radanh, 1364-1415 :\n Stalwart Guardian of the Realm, Master Tactician of the Royal Army, whose wisdom and courage were felled by treachery's poison.";
-                            case "Gravestone 2": return "Lord Aldric Blackthorn, 1355-1415 :\n Royal Advisor to the Crown, Keeper of the King's Seal, whose wisdom was lost to the shadows of betrayal.";
-                            case "Gravestone 8": return "Lord Arin, 1368-1415 :\n Royal Steward to the Crown, Keeper of the King's Household, whose loyalty was unwavering until the shadows of betrayal claimed him.";
-                            case "Gravestone 4": return "Prince Edric, 1367-1415 :\n Crown Prince and Knight of the Realm, whose bright future was extinguished in the flames of rebellion.";
-                            case "Gravestone 7": return "Mastein Blackwood, 1370-1415 :\n Chronicler of the King’s Deeds and his Kingdom’s Prosperity. He recorded an honorable and glorious reign but could not write its end";
-                            case "Gravestone 1": return "Luther Esso, 1366-1415 :\n Here lies Luther Esso, Master of Treaties and Builder of Bridge. His words quelled storms and forged iron bonds, yet even his eloquence could not mend a kingdom torn apart.";
-                            case "Gravestone 3": return "Princess Elara, 1360-1415 :\n Sister to the King, Heart of the Realm, whose love for her family and people was boundless, even in death.";
+                            case "Gravestone 6": return "Vernatius Willigher, 1355-1415 :\nHere lies Vernatius Willigher, Keeper of the Royal Library, Scholar at the Royal Academy and Seeker of Knowledge. His endless quest for wisdom illuminated the realm, yet even his vast knowledge could not uncover the betrayal that doomed the Kingdom";
+                            case "Gravestone 5": return "General Radanh, 1364-1415 :\nStalwart Guardian of the Realm, Master Tactician of the Royal Army, whose wisdom and courage were felled by treachery's poison.";
+                            case "Gravestone 2": return "Lord Aldric Blackthorn, 1355-1415 :\nRoyal Advisor to the Crown, Keeper of the King's Seal, whose wisdom was lost to the shadows of betrayal.";
+                            case "Gravestone 8": return "Lord Arin, 1368-1415 :\nRoyal Steward to the Crown, Keeper of the King's Household, whose loyalty was unwavering until the shadows of betrayal claimed him.";
+                            case "Gravestone 4": return "Prince Edric, 1367-1415 :\nCrown Prince and Knight of the Realm, whose bright future was extinguished in the flames of rebellion.";
+                            case "Gravestone 7": return "Mastein Blackwood, 1370-1415 :\nChronicler of the King’s Deeds and his Kingdom’s Prosperity. He recorded an honorable and glorious reign but could not write its end";
+                            case "Gravestone 1": return "Luther Esso, 1366-1415 :\nHere lies Luther Esso, Master of Treaties and Builder of Bridge. His words quelled storms and forged iron bonds, yet even his eloquence could not mend a kingdom torn apart.";
+                            case "Gravestone 3": return "Princess Elara, 1360-1415 :\nSister to the King, Heart of the Realm, whose love for her family and people was boundless, even in death.";
 
                             // for 1srt enigma with pillar 
                             case "Stone 0 red": return "She was the kingdom’s heart, her love enduring beyond the grave, a beacon in the darkness."; // Princess Elara
@@ -221,14 +221,14 @@ public class DialogueManager : NetworkBehaviour
                     {
                         switch (tag)
                         {
-                            case "Gravestone 6": return "Vernatius Willigher, 1377-1415 :\n  Here lies Vernatius Willigher, Keeper of the Royal Library, Scholar at the Royal Academy and Seeker of Knowledge. His endless quest for wisdom illuminated the realm, yet even his vast knowledge could not uncover the betrayal that doomed the Kingdom";
-                            case "Gravestone 5": return "General Radanh, 1375-1415 :\n Stalwart Guardian of the Realm, Master Tactician of the Royal Army, whose wisdom and courage were felled by treachery's poison.";
-                            case "Gravestone 2": return "Lord Aldric Blackthorn, 1361-1415 :\n Royal Advisor to the Crown, Keeper of the King's Seal, whose wisdom was lost to the shadows of betrayal.";
-                            case "Gravestone 8": return "Lord Arin, 1365-1415 :\n Royal Steward to the Crown, Keeper of the King's Household, whose loyalty was unwavering until the shadows of betrayal claimed him.";
-                            case "Gravestone 4": return "Prince Edric, 1371-1415 :\n Crown Prince and Knight of the Realm, whose bright future was extinguished in the flames of rebellion.";
-                            case "Gravestone 7": return "Mastein Blackwood, 1365-1415 :\n Chronicler of the King’s Deeds and his Kingdom’s Prosperity. He recorded an honorable and glorious reign but could not write its end";
-                            case "Gravestone 1": return "Luther Esso, 1359-1415 :\n Here lies Luther Esso, Master of Treaties and Builder of Bridge. His words quelled storms and forged iron bonds, yet even his eloquence could not mend a kingdom torn apart.";
-                            case "Gravestone 3": return "Princess Elara, 1372-1415 :\n Sister to the King, Heart of the Realm, whose love for her family and people was boundless, even in death.";
+                            case "Gravestone 6": return "Vernatius Willigher, 1377-1415 :\nHere lies Vernatius Willigher, Keeper of the Royal Library, Scholar at the Royal Academy and Seeker of Knowledge. His endless quest for wisdom illuminated the realm, yet even his vast knowledge could not uncover the betrayal that doomed the Kingdom";
+                            case "Gravestone 5": return "General Radanh, 1375-1415 :\nStalwart Guardian of the Realm, Master Tactician of the Royal Army, whose wisdom and courage were felled by treachery's poison.";
+                            case "Gravestone 2": return "Lord Aldric Blackthorn, 1361-1415 :\nRoyal Advisor to the Crown, Keeper of the King's Seal, whose wisdom was lost to the shadows of betrayal.";
+                            case "Gravestone 8": return "Lord Arin, 1365-1415 :\nRoyal Steward to the Crown, Keeper of the King's Household, whose loyalty was unwavering until the shadows of betrayal claimed him.";
+                            case "Gravestone 4": return "Prince Edric, 1371-1415 :\nCrown Prince and Knight of the Realm, whose bright future was extinguished in the flames of rebellion.";
+                            case "Gravestone 7": return "Mastein Blackwood, 1365-1415 :\nChronicler of the King’s Deeds and his Kingdom’s Prosperity. He recorded an honorable and glorious reign but could not write its end";
+                            case "Gravestone 1": return "Luther Esso, 1359-1415 :\nHere lies Luther Esso, Master of Treaties and Builder of Bridge. His words quelled storms and forged iron bonds, yet even his eloquence could not mend a kingdom torn apart.";
+                            case "Gravestone 3": return "Princess Elara, 1372-1415 :\nSister to the King, Heart of the Realm, whose love for her family and people was boundless, even in death.";
 
                             // for 1srt enigma with pillar 
                             case "Stone 0 red": return "She was the kingdom’s heart, her love enduring beyond the grave, a beacon in the darkness."; // Princess Elara
@@ -249,6 +249,8 @@ public class DialogueManager : NetworkBehaviour
             case "FailEgypteEnigma2": return "You FAILED, you must select each well in the correct order !";
             case "SuccessEgypteEnigma2": return "Congratulations, you achieved the enigma ! You have been teleported in the Medieval era !";
             case "ConsigneEgypteEnigma2": return "Your team-mate must find a magic well which will played different sound, you must select each well in the right order !";
+            case "ConsigneMedievalEnigma1Perso1": return "A thick mist hangs over an old, forgotten graveyard. Weathered tombstones still bear the traces of lives long past. Names and dates carved into stone wait to be uncovered. You hear a distant voice echoes:\n“The past whispers its secrets. Unravel the threads of time… and help your partner awaken the forgotten.”";
+            case "ConsigneMedievalEnigma1Perso2": return "In a mysterious sanctuary, glowing pillars lie dormant, waiting to be awakened. At their base, faint lanterns flicker, ready to be used. Each pillar bears a description of someone long gone — but their identity is incomplete. A soft voice whispers you:\n“Only the order of their arrival into the world will reignite their memory. But you cannot do it alone…”";
         }
         if (tag.Contains("Well")) return "You added this sound in the queue.";
         return "";
