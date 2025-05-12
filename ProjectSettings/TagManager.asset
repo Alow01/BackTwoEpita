@@ -33,6 +33,7 @@ TagManager:
   - ConsigneEgypteEnigma2
   - ConsigneMedievalEnigma1Perso1
   - ConsigneMedievalEnigma1Perso2
+  - ConsigneMedievalEnigma2
   layers:
   - Default
   - TransparentFX

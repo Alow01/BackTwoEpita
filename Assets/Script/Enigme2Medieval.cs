@@ -38,6 +38,7 @@ public class Enigme2Medieval : MonoBehaviour
         {
             IsPlay = true; // si le perso est resté + de 2 sec sur le trigger, on lance l'énigme
             ResetChrono();
+            i = 0;
             feu_foleys[i].gameObject.SetActive(true); // on active le premier feu foley
         }
         else
@@ -63,6 +64,10 @@ public class Enigme2Medieval : MonoBehaviour
                 feu_foleys[i].gameObject.SetActive(false); // on désactive le feu foley
                 i = 0;
                 chrono.Stop();
+                foreach(GameObject feu in feu_foleys)
+                {
+                    feu.gameObject.GetComponentInChildren<Feu_foley>().isTouch = false ; // on désactive tous les feux foleys
+                }
             }
             else if (feu_foleys[i].gameObject.GetComponentInChildren<Feu_foley>().isTouch)
             {
