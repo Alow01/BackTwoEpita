@@ -34,6 +34,7 @@ TagManager:
   - ConsigneMedievalEnigma1Perso1
   - ConsigneMedievalEnigma1Perso2
   - ConsigneMedievalEnigma2
+  - MapGride
   layers:
   - Default
   - TransparentFX

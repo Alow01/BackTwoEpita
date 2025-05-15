@@ -21,6 +21,8 @@ public class DialogueManager : NetworkBehaviour
                                                                       new List<int> {4,6,0,2,5,1,3},
                                                                      };
 
+    GameObject MapGride;
+
 
     private void Start()
     {
@@ -28,7 +30,14 @@ public class DialogueManager : NetworkBehaviour
         if (dialogueBox == null) dialogueBox = GameObject.FindGameObjectWithTag("DialogueBox");
         if (dialogueText == null) dialogueText = dialogueBox.GetComponentInChildren<TMP_Text>(); // Recherche le TMP_Text dans les enfants
         // Cache le Canvas au départ
-        dialogueBox.SetActive(false);
+        
+
+        MapGride = GameObject.FindGameObjectWithTag("MapGride");
+        if (isLocalPlayer)
+        {
+            dialogueBox.SetActive(false);
+            MapGride.SetActive(false);
+        }
     }
 
     // M�thode RPC pour afficher le dialogue
@@ -51,13 +60,15 @@ public class DialogueManager : NetworkBehaviour
     public void HideDialogue()
     {
         if (dialogueBox == null) dialogueBox = GameObject.FindGameObjectWithTag("DialogueBox");
-        if (!dialogueBox.activeSelf) return;
+        if (!dialogueBox.activeSelf && !MapGride.activeSelf) return;
         if (dialogueText == null) dialogueText = dialogueBox.GetComponentInChildren<TMP_Text>(); // Recherche le TMP_Text dans les enfants
 
 
         if (isLocalPlayer)
         {
             dialogueBox.SetActive(false);
+            if (MapGride == null) MapGride = GameObject.FindGameObjectWithTag("MapGride");
+            MapGride.SetActive(false);
         }
     }
 
@@ -260,4 +271,19 @@ public class DialogueManager : NetworkBehaviour
     }
 
  
+    public void ShowMapGride()
+    {
+        if (MapGride == null) MapGride = GameObject.FindGameObjectWithTag("MapGride");
+        if (isLocalPlayer) MapGride.SetActive(true);
+    }
+
+    public void OnQuitMapDBox()
+    {
+        if (isLocalPlayer)
+        { 
+            MapGride.SetActive(true);
+            dialogueBox.SetActive(true);
+        }
+    }
+
 }

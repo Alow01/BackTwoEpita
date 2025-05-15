@@ -101,7 +101,7 @@ namespace Cainos.PixelArtTopDown_Basic
             {
                 if (tag == "EgypteEnigma1Map")
                 {
-                    ShowMapEnigma();
+                    dialogueManager.ShowMapGride();
                     return;
                 }
                 if (tag.Contains("Well")) WellM(tag);
@@ -117,14 +117,16 @@ namespace Cainos.PixelArtTopDown_Basic
             }
         }
 
-        public void ShowMapEnigma()
-        {
-            Debug.Log("Affiche map...");
-        }
+        
 
         public void WellM(string tag)
         {
             wellM.AddToQueue(tag);
+        }
+
+        private void OnDisable()
+        {
+            dialogueManager.OnQuitMapDBox();
         }
     }
 }

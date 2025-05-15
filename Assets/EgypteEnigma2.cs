@@ -32,6 +32,7 @@ public class EgypteEnigma2 : MonoBehaviour
                 else
                 {
                     dialogueManager.RpcShowDialogue("FailEgypteEnigma2");
+                    Debug.Log("Failed enigma");
                 }
                 q = new Queue<string>();
 
@@ -48,7 +49,7 @@ public class EgypteEnigma2 : MonoBehaviour
 
     public void AddToQueue(string str)
     {
-        q.Enqueue(str);
         Debug.Log($"{str} was added to the queue");
+        q.Enqueue(str);
     }
 }

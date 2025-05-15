@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BTElogo_0: -1264292500541925655
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

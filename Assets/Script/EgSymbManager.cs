@@ -2,7 +2,7 @@ using Mirror;
 using UnityEngine;
 using System;
 
-public class EgSymbManager : MonoBehaviour
+public class EgSymbManager : NetworkBehaviour
 {
     public GameObject door;
 
@@ -32,7 +32,7 @@ public class EgSymbManager : MonoBehaviour
             if (condition) {
                 Debug.Log("All symbols has been press at the same time -> Success enigma -> Door P2 is now open");
                 hasBeenOpen = true;
-                MoveDoor();               
+                RpcMoveDoor();               
             }
         }
 
@@ -66,9 +66,13 @@ public class EgSymbManager : MonoBehaviour
         Debug.Log($"Pressure plate {name} has been released !");
     }
 
-    private void MoveDoor()
+    [ClientRpc]
+    void RpcMoveDoor()
     {
-        door.GetComponent<Transform>().position = new Vector3(200, -200, 0);
+        if (door != null)
+        {
+            door.transform.position = new Vector3(200, -200, 0);
+        }
     }
 
 }
