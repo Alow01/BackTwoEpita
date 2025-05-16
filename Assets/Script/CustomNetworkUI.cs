@@ -7,6 +7,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using Mirror;
 using TMPro;
+using Unity.VisualScripting.Antlr3.Runtime;
+using Mirror.Discovery;
 
 public class CustomNetworkUI : MonoBehaviour
 {
@@ -20,9 +22,8 @@ public class CustomNetworkUI : MonoBehaviour
     public Button refreshButton;
     public GameObject deviceEntryPrefab; 
     public Transform contentParent; 
-    public int portToCheck = 7777;
-    public int concurrentChecks = 10; // Number of IPs checked in parallel
-    public float delayBetweenBatches = 0.1f; 
+    public NetworkDiscovery networkDiscovery;
+    private Dictionary<long, ServerResponse> discoveredServers = new Dictionary<long, ServerResponse>();
 
     void Start()
     {
@@ -37,6 +38,7 @@ public class CustomNetworkUI : MonoBehaviour
         networkManager.StartHost();
         statusText.text = "Server Active...";
         stopButton.gameObject.SetActive(true);
+        networkDiscovery.AdvertiseServer();
     }
 
     void StartClient()
@@ -65,10 +67,28 @@ public class CustomNetworkUI : MonoBehaviour
 
     public void RefreshIPList()
     {
-        StartCoroutine(ScanNetworkBatched());
+        discoveredServers.Clear();
+        networkDiscovery.StartDiscovery();
+    }
+
+    public void OnDiscoveredServer(ServerResponse info)
+    {
+        if (!discoveredServers.ContainsKey(info.serverId))
+        {
+            discoveredServers[info.serverId] = info;
+            Debug.Log("Found server: " + info.EndPoint);
+
+            GameObject entry = Instantiate(deviceEntryPrefab, contentParent);
+            entry.GetComponentInChildren<TMP_Text>().text = $"IP: {info.EndPoint.Address}";
+
+            // You can automatically connect to the first one
+            //networkManager.networkAddress = info.EndPoint.Address.ToString();
+            //networkManager.StartClient();
+        }
     }
 
 
+    /*
     IEnumerator ScanNetworkBatched()
     {
         string baseIp = "192.168.1.";
@@ -117,4 +137,5 @@ public class CustomNetworkUI : MonoBehaviour
         else Debug.Log("No Port : "+ port + " open on IP :" + ip);
         yield return null;
     }
+    */
 }
