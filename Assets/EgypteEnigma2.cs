@@ -38,7 +38,7 @@ public class EgypteEnigma2 : MonoBehaviour
 
                 if (hasCompletedEnygma)
                 {
-                    TPManager.GoMedieval();
+                    TPManager.GoLobby();
                 }
             }
            
