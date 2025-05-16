@@ -35,6 +35,8 @@ TagManager:
   - ConsigneMedievalEnigma1Perso2
   - ConsigneMedievalEnigma2
   - MapGride
+  - Sign Egypte
+  - Sign Medieval
   layers:
   - Default
   - TransparentFX
