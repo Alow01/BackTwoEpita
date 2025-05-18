@@ -1,3 +1,4 @@
+using Mirror;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +7,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using static UnityEngine.ParticleSystem;
 
-public class Enigme1Medieval : MonoBehaviour
+public class Enigme1Medieval : NetworkBehaviour
 {
     public float lerpSpeed;
     public GameObject porte;
@@ -32,7 +33,7 @@ public class Enigme1Medieval : MonoBehaviour
     public AudioClip successAudio = null;
     public AudioClip failureAudio = null;
     private bool fini;
-    private AudioSource audioSources;
+    public AudioSource audioSource;
 
     private void Start()
     {
@@ -40,6 +41,7 @@ public class Enigme1Medieval : MonoBehaviour
         PilliersActive = new List<int>();
         fini = false;
         particleSystem.gameObject.SetActive(false);
+        Debug.Log($"Ordre des pilliers : {string.Join(" ",ordrePilliers)}");
     }
 
    
@@ -48,60 +50,45 @@ public class Enigme1Medieval : MonoBehaviour
     {
         if (!fini)
         {
-            int i = 0;
-            foreach (GameObject Pillier in Pilliers) // ajoute a la liste les pilliers dans l'ordre de leur activation
-            {
-                Transform glowTransform = Pillier.transform.Find("Glow");
-                if ( glowTransform.gameObject.activeSelf)   
-                {
-                    if (!PilliersActive.Contains(i))
-                    {
-                        Debug.Log("Pillier " + i + " is active");
-                        PilliersActive.Add(i);
-                    }
-                }
-                else
-                {
-                    if (PilliersActive.Contains(i)) PilliersActive.Remove(i);
-                }
-                i++;
-            }
+            
 
             if (PilliersActive.Count >= 7)
             {
                 if (PilliersActive.SequenceEqual(ordrePilliers)) // ordre bon : reussite de l'énigme
                 {
-                    StartCoroutine(ClignoterPilliers()); // fait clignoter les pilliers 
-                    porte.SetActive(false); // ouvre la porte
+                    //StartCoroutine(ClignoterPilliers()); // fait clignoter les pilliers 
+
+                    RpcMoveDoor(); // ouvre la porte
+
+                    Debug.Log("Succed enigma");
                     fini = true;
                     if (successAudio!=null)
                     {
-                        audioSources.clip = successAudio;
-                        audioSources.Play(); // joue le son de reussite
-                        audioSources.Stop();
-                    } 
-                    foreach (GameObject lant in Lanterns)
-                    {
-                        lant.transform.Find("Particle System").gameObject.SetActive(false); // éteint les lanternes
-                        lant.transform.Find("Square").gameObject.SetActive(false);
+                        audioSource.resource = successAudio;
+                        //audioSource.Play(); // joue le son de reussite
+                        //audioSource.Stop();
                     }
+
                     particleConsigne1.gameObject.SetActive(false); // desactive les systemes de particules des consignes
                     particleConsigne2.gameObject.SetActive(false);
                     particleSystem.gameObject.SetActive(true); // active le systeme de particule
                 }
                 else // ordre d'allumage faux
                 {
+                    Debug.Log("Failed enigma");
                     if (failureAudio != null)
                     {
-                        audioSources.clip = failureAudio;
-                        audioSources.Play(); // joue le son d'echec
-                        audioSources.Stop();
+                        audioSource.resource = failureAudio;
+                        //audioSource.Play(); // joue le son d'echec
+                        //audioSources.Stop();
                     } 
                     foreach (GameObject Pillier in Pilliers) // éteint les pilliers
                     {
                         Transform glowTransform = Pillier.transform.Find("Glow");
                         glowTransform.gameObject.SetActive(false);
                     }
+                    ordrePilliers = new List<int>();
+
                 }
             }
 
@@ -109,6 +96,42 @@ public class Enigme1Medieval : MonoBehaviour
         }
     }
 
+    public void LightAPillar(string tag)
+    {
+        foreach(GameObject Pillier in Pilliers)
+        {
+            if(Pillier.tag == tag)
+            {
+                Transform glowTransform = Pillier.transform.Find("Glow");
+                int indexPillier = int.Parse(Pillier.tag.Split("Stone ")[1].Split(" ")[0]);
+                if (!glowTransform.gameObject.activeSelf)
+                {
+                    Debug.Log($"Pillier {indexPillier} has been actived");
+                    glowTransform.gameObject.SetActive(true);
+                    PilliersActive.Add(indexPillier);
+                }
+                else
+                {
+                    Debug.Log($"Pillier {indexPillier} has been desactived");
+                    glowTransform.gameObject.SetActive(false);
+                    PilliersActive.Remove(indexPillier);
+                }
+                Debug.Log($"The Pillar list is now : {string.Join(" ", PilliersActive)}");
+                return;
+            }
+           
+        }
+    }
+
+    [ClientRpc]
+    void RpcMoveDoor()
+    {
+        if (porte != null)
+        {
+            porte.transform.position = new Vector3(7, 50, 0);
+        }
+    }
+    /*
     private IEnumerator ClignoterPilliers()
     {
         yield return new WaitForSeconds(5f);
@@ -129,4 +152,5 @@ public class Enigme1Medieval : MonoBehaviour
             yield return new WaitForSeconds(0.5f); // attend 0.5 seconde
         }
     }
+    */
 }

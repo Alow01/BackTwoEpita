@@ -78,9 +78,8 @@ public class DialogueManager : NetworkBehaviour
         if (OrdrePilliers == null)  OrdrePilliers = objetAvecEnigme.GetComponentInChildren<Enigme1Medieval>().ordrePilliers; 
        
         
-        if (tag.Contains("stone")) // à afficher pour l'énigme 1 du medieval
+        if (tag.Contains("Stone") || tag.Contains("stone")) // à afficher pour l'énigme 1 du medieval
         {
-            Debug.Log("1");
             switch (OrdrePilliers)  
             {
                  

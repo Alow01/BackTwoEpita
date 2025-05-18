@@ -24,6 +24,7 @@ namespace Cainos.PixelArtTopDown_Basic
         public string dialogueMessage = "Test";
         
         EgypteEnigma2 wellM;
+        Enigme1Medieval pillierManager;
 
         void FindObject()
         {
@@ -47,6 +48,8 @@ namespace Cainos.PixelArtTopDown_Basic
             MoveAction.Enable();
             rigidbody2d = GetComponent<Rigidbody2D>();
             wellM = GameObject.FindGameObjectWithTag("WellM").GetComponent<EgypteEnigma2>();
+            pillierManager = GameObject.FindGameObjectWithTag("Enigme1").GetComponent<Enigme1Medieval>();
+
         }
 
 
@@ -105,6 +108,7 @@ namespace Cainos.PixelArtTopDown_Basic
                     return;
                 }
                 if (tag.Contains("Well")) WellM(tag);
+                if (tag.Contains("Stone")) PillierM(tag);
                 dialogueManager.RpcShowDialogue(tag);
             }
         }
@@ -118,6 +122,10 @@ namespace Cainos.PixelArtTopDown_Basic
         }
 
         
+        void PillierM(string tag)
+        {
+            pillierManager.LightAPillar(tag);
+        }
 
         public void WellM(string tag)
         {
