@@ -87,7 +87,7 @@ public class Enigme1Medieval : NetworkBehaviour
                         Transform glowTransform = Pillier.transform.Find("Glow");
                         glowTransform.gameObject.SetActive(false);
                     }
-                    ordrePilliers = new List<int>();
+                    PilliersActive = new List<int>();
 
                 }
             }
@@ -98,28 +98,31 @@ public class Enigme1Medieval : NetworkBehaviour
 
     public void LightAPillar(string tag)
     {
-        foreach(GameObject Pillier in Pilliers)
+        if (!fini)
         {
-            if(Pillier.tag == tag)
+            foreach (GameObject Pillier in Pilliers)
             {
-                Transform glowTransform = Pillier.transform.Find("Glow");
-                int indexPillier = int.Parse(Pillier.tag.Split("Stone ")[1].Split(" ")[0]);
-                if (!glowTransform.gameObject.activeSelf)
+                if (Pillier.tag == tag)
                 {
-                    Debug.Log($"Pillier {indexPillier} has been actived");
-                    glowTransform.gameObject.SetActive(true);
-                    PilliersActive.Add(indexPillier);
+                    Transform glowTransform = Pillier.transform.Find("Glow");
+                    int indexPillier = int.Parse(Pillier.tag.Split("Stone ")[1].Split(" ")[0]);
+                    if (!glowTransform.gameObject.activeSelf)
+                    {
+                        Debug.Log($"Pillier {indexPillier} has been actived");
+                        glowTransform.gameObject.SetActive(true);
+                        PilliersActive.Add(indexPillier);
+                    }
+                    else
+                    {
+                        Debug.Log($"Pillier {indexPillier} has been desactived");
+                        glowTransform.gameObject.SetActive(false);
+                        PilliersActive.Remove(indexPillier);
+                    }
+                    Debug.Log($"The Pillar list is now : {string.Join(" ", PilliersActive)}");
+                    return;
                 }
-                else
-                {
-                    Debug.Log($"Pillier {indexPillier} has been desactived");
-                    glowTransform.gameObject.SetActive(false);
-                    PilliersActive.Remove(indexPillier);
-                }
-                Debug.Log($"The Pillar list is now : {string.Join(" ", PilliersActive)}");
-                return;
+
             }
-           
         }
     }
 
