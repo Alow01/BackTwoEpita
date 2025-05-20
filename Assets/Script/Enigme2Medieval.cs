@@ -11,80 +11,101 @@ using Debug = UnityEngine.Debug;
 
 public class Enigme2Medieval : MonoBehaviour
 {
-    public List<GameObject> feu_foleys;
-    public int i;
+    public List<List<GameObject>> Zones_feux_follets;
+    public int NumeroTentativeToucherFeuFollet;
     public bool IsPlay;
-    private Stopwatch chrono;
-    public long interval = 10000;
+    public GameObject feu_follet_de_depart; // contient le 1er feu follet qui va apparaitre pour le joueur
+    private GameObject feu_follet_actif;
+    private int ZoneFeuFolletActif;
+    public float DistanceFuite = 1.5f;
+    private GameObject player;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        i = 0;
+        NumeroTentativeToucherFeuFollet = 0;
         IsPlay = false;
-        chrono = new Stopwatch();
+
+        foreach(List<GameObject> zone in Zones_feux_follets) // éteind initialement tous les feux follets
+        {
+            foreach (GameObject feu_follet in zone)
+            {
+                feu_follet.SetActive(false);
+            }
+        }
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // afficher lancement enigme
-
-        chrono.Start();
+        IsPlay = true;
+        feu_follet_actif = feu_follet_de_depart;
+        feu_follet_actif.SetActive(true);
+        ZoneFeuFolletActif = 0;
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (chrono.ElapsedMilliseconds >= 1000)
-        {
-            IsPlay = true; // si le perso est resté + de 2 sec sur le trigger, on lance l'énigme
-            ResetChrono();
-            i = 0;
-            feu_foleys[i].gameObject.SetActive(true); // on active le premier feu foley
-        }
-        else
-        {
-            IsPlay = false; // sinon on ne lance pas l'énigme
-            chrono.Stop();
-        }
-    }
 
-    public void ResetChrono()
-    {
-        chrono.Reset(); // Reset the chrono
-        chrono.Start(); // Restart the chrono
-    }
 
     void Update()
     {
         if (IsPlay)
         {
-            if (chrono.ElapsedMilliseconds > interval) // trop long à touché le feu foley : perdu
+            if (player != null && feu_follet_actif != null)
             {
-                IsPlay = false; // échec de l'enigme
-                feu_foleys[i].gameObject.SetActive(false); // on désactive le feu foley
-                i = 0;
-                chrono.Stop();
-                foreach(GameObject feu in feu_foleys)
+                float distance = Vector3.Distance(feu_follet_actif.transform.position, player.transform.position);
+               
+                if (distance <= DistanceFuite)
                 {
-                    feu.gameObject.GetComponentInChildren<Feu_foley>().isTouch = false ; // on désactive tous les feux foleys
-                }
-            }
-            else if (feu_foleys[i].gameObject.GetComponentInChildren<Feu_foley>().isTouch)
-            {
-                chrono.Stop();
-                feu_foleys[i].gameObject.SetActive(false);
-                i++;
-                if (i >= feu_foleys.Count)
-                {
-                    IsPlay = false; // fin de l'enigme
-                }
-                else
-                {
-                    feu_foleys[i].gameObject.SetActive(true);
-                    ResetChrono(); // Reset the chrono
+                    feu_follet_actif.SetActive(false);
+                    NumeroTentativeToucherFeuFollet++;
+                    if (NumeroTentativeToucherFeuFollet >= 7)
+                    {
+                        IsPlay = false;
+                        Debug.Log("Fin de l'énigme");
+                        return;
+                    }
+
+                    List<int> ZonesPossibles= new List<int>();
+                    switch (ZoneFeuFolletActif)
+                    {
+                        case 0:
+                            ZonesPossibles = new List<int>() { 3, 2, 0 };
+                            break;
+                        case 1:
+                            ZonesPossibles = new List<int>() { 4, 5, 6, 7 };
+                            break;
+                        case 2:
+                            ZonesPossibles = new List<int>() { 3, 4, 5 };
+                            break;
+                        case 3:
+                            ZonesPossibles = new List<int>() { 4, 5, 6, 7 };
+                            break;
+                        case 4:
+                            ZonesPossibles = new List<int>() { 4, 5, 6, 7 };
+                            break;
+                        case 5:
+                            ZonesPossibles = new List<int>() { 1, 2, 6 };
+                            break;
+                        case 6:
+                            ZonesPossibles = new List<int>() { 8, 3, 2,0 };
+                            break;
+                        case 7:
+                            ZonesPossibles = new List<int>() { 7,1,4,0,2 };
+                            break;
+                        case 8:
+                            ZonesPossibles = new List<int>() { 0,3,4,6 };
+                            break;
+                        case 9:
+                            ZonesPossibles = new List<int>() { 5,6,4,3 };
+                            break;
+                    }
+                    ZoneFeuFolletActif = ZonesPossibles[Random.Range(0, ZonesPossibles.Count)]; // zone d'apparition élougnée aléatoire 
+                    int randomFeuFollet = Random.Range(0, Zones_feux_follets[ZoneFeuFolletActif].Count);
+                    feu_follet_actif = Zones_feux_follets[ZoneFeuFolletActif][randomFeuFollet];
+                    feu_follet_actif.SetActive(true);
+
                 }
             }
         }
     }
-    
 }
