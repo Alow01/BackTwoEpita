@@ -258,13 +258,14 @@ public class DialogueManager : NetworkBehaviour
         {
             case "EmptyChest": return "This Chest seems empty...";
             case "FailEgypteEnigma2": return "You FAILED, you must select each well in the correct order !";
-            case "SuccessEgypteEnigma2": return "Congratulations, you achieved the enigma ! You have been teleported in the Medieval era !";
+            case "SuccessEgypteEnigma2": return "Congratulations, you achieved the enigma !";
             case "ConsigneEgypteEnigma2": return "Your team-mate must find a magic well which will played different sound, you must select each well in the right order !";
             case "ConsigneMedievalEnigma1Perso1": return "A thick mist hangs over an old, forgotten graveyard. Weathered tombstones still bear the traces of lives long past. Names and dates carved into stone wait to be uncovered. You hear a distant voice echoes:\n“The past whispers its secrets. Unravel the threads of time… and help your partner awaken the forgotten.”";
             case "ConsigneMedievalEnigma1Perso2": return "In a mysterious sanctuary, glowing pillars lie dormant, waiting to be awakened. At their base, faint lanterns flicker, ready to be used. Each pillar bears a description of someone long gone — but their identity is incomplete. A soft voice whispers you:\n“Only the order of their arrival into the world will reignite their memory. But you cannot do it alone…”";
             case "ConsigneMedievalEnigma2": return "When the stone glows, the spirits awaken.\nTry to catch them — patience is the key.";
             case "Sign Egypte": return "Teleportation point to ancient Egypt";
             case "Sign Medieval": return "Teleportation point to the Middle Ages";
+            case "Waiting for the other player": return "You finally captured the Feu Follet, waiting for your mate to do the same !";
         }
         if (tag.Contains("Well")) return "You added this sound in the queue.";
         return "";

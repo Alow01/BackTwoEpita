@@ -1,111 +1,94 @@
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Timers;
 using UnityEngine;
-using System.Collections;
-using System.Linq;
-using Unity.VisualScripting;
+using Mirror;
 
-using UnityEngine.Rendering;
-using Debug = UnityEngine.Debug;
-
-public class Enigme2Medieval : MonoBehaviour
+public class Enigme2Medieval : NetworkBehaviour
 {
-    public List<List<GameObject>> Zones_feux_follets;
-    public int NumeroTentativeToucherFeuFollet;
-    public bool IsPlay;
-    public GameObject feu_follet_de_depart; // contient le 1er feu follet qui va apparaitre pour le joueur
-    private GameObject feu_follet_actif;
-    private int ZoneFeuFolletActif;
-    public float DistanceFuite = 1.5f;
-    private GameObject player;
+    public GameObject feuFL;
+    public GameObject feuFR;
 
+    private bool IsPlaying;
+
+    [SyncVar] public bool isCapturedfeuFL = false;
+    [SyncVar] public bool isCapturedfeuFR = false;
+
+    [Server]
+    public void SetLeftTrue()
+    {
+        isCapturedfeuFL = true;
+    }
+
+    [Server]
+    public void SetRightTrue()
+    {
+        isCapturedfeuFR = true;
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        NumeroTentativeToucherFeuFollet = 0;
-        IsPlay = false;
-
-        foreach(List<GameObject> zone in Zones_feux_follets) // éteind initialement tous les feux follets
-        {
-            foreach (GameObject feu_follet in zone)
-            {
-                feu_follet.SetActive(false);
-            }
-        }
-        player = GameObject.FindGameObjectWithTag("Player");
+        IsPlaying = false;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        IsPlay = true;
-        feu_follet_actif = feu_follet_de_depart;
-        feu_follet_actif.SetActive(true);
-        ZoneFeuFolletActif = 0;
+        if (!IsPlaying)
+        {
+            if (collision.gameObject.tag == "Player")
+            {
+                IsPlaying = true;
+                feuFL.transform.position = new Vector3 (4, 14, 0);
+                feuFR.transform.position = new Vector3(66, 12,0);
+
+
+                feuFL.GetComponent<FeuFollet>().IsPlaying = true;
+                feuFR.GetComponent<FeuFollet>().IsPlaying = true;
+
+                Debug.Log("Medieval enigma 2 is starting");
+            }
+        }
+
     }
 
 
 
     void Update()
     {
-        if (IsPlay)
+        if (IsPlaying)
         {
-            if (player != null && feu_follet_actif != null)
+
+            if(isCapturedfeuFL && isCapturedfeuFR)
             {
-                float distance = Vector3.Distance(feu_follet_actif.transform.position, player.transform.position);
-               
-                if (distance <= DistanceFuite)
+                Debug.Log("Succed Medieval Enigma 2 !");
+                
+                IsPlaying=false;
+
+
+
+                GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+                foreach (GameObject p in players)
                 {
-                    feu_follet_actif.SetActive(false);
-                    NumeroTentativeToucherFeuFollet++;
-                    if (NumeroTentativeToucherFeuFollet >= 7)
+                    if (p.GetComponent<PlayerSetup>().playerRole == "Player 1")
                     {
-                        IsPlay = false;
-                        Debug.Log("Fin de l'énigme");
-                        return;
+                        p.transform.position = new Vector2(114, -28);
                     }
-
-                    List<int> ZonesPossibles= new List<int>();
-                    switch (ZoneFeuFolletActif)
+                    else
                     {
-                        case 0:
-                            ZonesPossibles = new List<int>() { 3, 2, 0 };
-                            break;
-                        case 1:
-                            ZonesPossibles = new List<int>() { 4, 5, 6, 7 };
-                            break;
-                        case 2:
-                            ZonesPossibles = new List<int>() { 3, 4, 5 };
-                            break;
-                        case 3:
-                            ZonesPossibles = new List<int>() { 4, 5, 6, 7 };
-                            break;
-                        case 4:
-                            ZonesPossibles = new List<int>() { 4, 5, 6, 7 };
-                            break;
-                        case 5:
-                            ZonesPossibles = new List<int>() { 1, 2, 6 };
-                            break;
-                        case 6:
-                            ZonesPossibles = new List<int>() { 8, 3, 2,0 };
-                            break;
-                        case 7:
-                            ZonesPossibles = new List<int>() { 7,1,4,0,2 };
-                            break;
-                        case 8:
-                            ZonesPossibles = new List<int>() { 0,3,4,6 };
-                            break;
-                        case 9:
-                            ZonesPossibles = new List<int>() { 5,6,4,3 };
-                            break;
+                        p.transform.position = new Vector2(117, -28);
                     }
-                    ZoneFeuFolletActif = ZonesPossibles[Random.Range(0, ZonesPossibles.Count)]; // zone d'apparition élougnée aléatoire 
-                    int randomFeuFollet = Random.Range(0, Zones_feux_follets[ZoneFeuFolletActif].Count);
-                    feu_follet_actif = Zones_feux_follets[ZoneFeuFolletActif][randomFeuFollet];
-                    feu_follet_actif.SetActive(true);
+                    //change le layer du joueur en layer 1
+                    p.gameObject.layer = LayerMask.NameToLayer("Layer 1");
 
+                    p.gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "Layer 1";
+                    SpriteRenderer[] srs = p.gameObject.GetComponentsInChildren<SpriteRenderer>();
+                    foreach (SpriteRenderer sr in srs)
+                    {
+                        sr.sortingLayerName = "Layer 1";
+                    }
+                    DialogueManager dialogueManager = p.GetComponent<DialogueManager>();
+                    dialogueManager.RpcShowDialogue("SuccessEgypteEnigma2");
                 }
+                
             }
         }
     }
+
 }

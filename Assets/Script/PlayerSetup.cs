@@ -83,4 +83,24 @@ public class PlayerSetup : NetworkBehaviour
         isMenuOpen = !isMenuOpen;
         menuPanel.SetActive(isMenuOpen);
     }
+
+    [Command]
+    public void CmdTouchLeft()
+    {
+        var receiver = FindObjectOfType<Enigme2Medieval>();
+        if (receiver != null)
+        {
+            receiver.SetLeftTrue();
+        }
+    }
+
+    [Command]
+    public void CmdTouchRight()
+    {
+        var receiver = FindObjectOfType<Enigme2Medieval>();
+        if (receiver != null)
+        {
+            receiver.SetRightTrue();
+        }
+    }
 }

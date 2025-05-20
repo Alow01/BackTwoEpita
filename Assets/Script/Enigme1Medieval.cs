@@ -40,7 +40,7 @@ public class Enigme1Medieval : NetworkBehaviour
         ordrePilliers = ordrePilliersRandom[Random.Range(0, ordrePilliersRandom.Count)];
         PilliersActive = new List<int>();
         fini = false;
-        particleSystem.gameObject.SetActive(false);
+        //particleSystem.gameObject.SetActive(false);
         Debug.Log($"Ordre des pilliers : {string.Join(" ",ordrePilliers)}");
     }
 
@@ -71,7 +71,7 @@ public class Enigme1Medieval : NetworkBehaviour
 
                     particleConsigne1.gameObject.SetActive(false); // desactive les systemes de particules des consignes
                     particleConsigne2.gameObject.SetActive(false);
-                    particleSystem.gameObject.SetActive(true); // active le systeme de particule
+                    //particleSystem.gameObject.SetActive(true); // active le systeme de particule
                 }
                 else // ordre d'allumage faux
                 {

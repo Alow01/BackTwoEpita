@@ -37,6 +37,8 @@ TagManager:
   - MapGride
   - Sign Egypte
   - Sign Medieval
+  - feuFL
+  - feuFR
   layers:
   - Default
   - TransparentFX
