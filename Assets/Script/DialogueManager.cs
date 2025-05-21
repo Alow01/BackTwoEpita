@@ -266,6 +266,7 @@ public class DialogueManager : NetworkBehaviour
             case "Sign Egypte": return "Teleportation point to ancient Egypt";
             case "Sign Medieval": return "Teleportation point to the Middle Ages";
             case "Waiting for the other player": return "You finally captured the Feu Follet, waiting for your mate to do the same !";
+            case "ff enfui": return "The Feu Follet ran away, chase it !";
         }
         if (tag.Contains("Well")) return "You added this sound in the queue.";
         return "";

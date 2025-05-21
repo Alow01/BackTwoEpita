@@ -87,7 +87,9 @@ public class PlayerSetup : NetworkBehaviour
     [Command]
     public void CmdTouchLeft()
     {
+#pragma warning disable CS0618 // Le type ou le membre est obsolète
         var receiver = FindObjectOfType<Enigme2Medieval>();
+#pragma warning restore CS0618 // Le type ou le membre est obsolète
         if (receiver != null)
         {
             receiver.SetLeftTrue();
@@ -97,7 +99,9 @@ public class PlayerSetup : NetworkBehaviour
     [Command]
     public void CmdTouchRight()
     {
+#pragma warning disable CS0618 // Le type ou le membre est obsolète
         var receiver = FindObjectOfType<Enigme2Medieval>();
+#pragma warning restore CS0618 // Le type ou le membre est obsolète
         if (receiver != null)
         {
             receiver.SetRightTrue();

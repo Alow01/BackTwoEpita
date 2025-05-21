@@ -5,6 +5,7 @@ public class PressurePlate : MonoBehaviour
 {
     private EgSymbManager parentScript;
 
+    
 
     private void Start()
     {
@@ -13,11 +14,11 @@ public class PressurePlate : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        parentScript.OnPlateTriggered(other, this.gameObject.name);
+        if(other.gameObject.tag != "Player") parentScript.OnPlateTriggered(other, this.gameObject.name);
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        parentScript.OnPlateUntriggered(other, this.gameObject.name);
+        if (other.gameObject.tag != "Player") parentScript.OnPlateUntriggered(other, this.gameObject.name);
     }
 }
