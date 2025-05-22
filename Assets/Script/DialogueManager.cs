@@ -94,7 +94,7 @@ public class DialogueManager : NetworkBehaviour
                             case "Gravestone 4": return "Prince Edric, 1359-1415 :\nCrown Prince and Knight of the Realm, whose bright future was extinguished in the flames of rebellion.";
                             case "Gravestone 7": return "Mastein Blackwood, 1370-1415 :\nChronicler of the King’s Deeds and his Kingdom’s Prosperity. He recorded an honorable and glorious reign but could not write its end";
                             case "Gravestone 1": return "Luther Esso, 1356-1415 :\nHere lies Luther Esso, Master of Treaties and Builder of Bridge. His words quelled storms and forged iron bonds, yet even his eloquence could not mend a kingdom torn apart.";
-                            case "Gravestone 3": return "Princess Elara, 1352-1415 :\nSister to the King, Heart of the Realm, whose love for her family and people was boundless, even in death.";
+                            case "Gravestone 3": return OrdrePilliers.ToString();//"Princess Elara, 1352-1415 :\nSister to the King, Heart of the Realm, whose love for her family and people was boundless, even in death.";
 
                             // for 1srt enigma with pillar 
                             case "Stone 0 red": return "She was the kingdom’s heart, her love enduring beyond the grave, a beacon in the darkness."; // Princess Elara
