@@ -9,7 +9,7 @@ public class FeuFollet : NetworkBehaviour
     public bool IsPlaying;
     public int willBeCapturedAfter;
 
-    public float detectionRange = 1f;
+    public float detectionRange = 0.5f;
 
     public Enigme2Medieval enigmaManager;
 
