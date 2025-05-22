@@ -9,7 +9,7 @@ public class FeuFollet : NetworkBehaviour
     public bool IsPlaying;
     public int willBeCapturedAfter;
 
-    public float detectionRange = 0.5f;
+    public float detectionRange = 2f;
 
     public Enigme2Medieval enigmaManager;
 
@@ -62,7 +62,7 @@ public class FeuFollet : NetworkBehaviour
         foreach (GameObject p in players)
         {
             float distance = Vector2.Distance(transform.position, p.transform.position);
-
+            
             if (distance <= detectionRange)
             {
                 hasBeenHitCounter++;

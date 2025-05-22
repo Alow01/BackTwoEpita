@@ -50,8 +50,6 @@ public class Enigme1Medieval : NetworkBehaviour
     {
         if (!fini)
         {
-            Debug.Log($"odre actifs : {string.Join(" ", ordrePilliers)}");
-            Debug.Log($"Pilliers actifs : {string.Join(" ", PilliersActive)}");
             if (PilliersActive.Count >= 7)
             {
                 if (PilliersActive.SequenceEqual(ordrePilliers)) // ordre bon : reussite de l'énigme

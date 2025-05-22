@@ -86,7 +86,7 @@ public class DialogueManager : NetworkBehaviour
             switch (OrdrePilliers)  
             {
                  
-                case List<int> l when l[0] == 0: // {0,6,3,5,1,2,4}
+                case List<int> l when l[0] == 0: // cas {0,6,3,5,1,2,4}
                     {
                         switch (tag)
                         {
@@ -143,7 +143,7 @@ public class DialogueManager : NetworkBehaviour
                             case "Gravestone 5": return "General Radanh, 1366-1415 :\nStalwart Guardian of the Realm, Master Tactician of the Royal Army, whose wisdom and courage were felled by treachery's poison.";
                             case "Gravestone 2": return "Lord Aldric Blackthorn, 1370-1415 :\nRoyal Advisor to the Crown, Keeper of the King's Seal, whose wisdom was lost to the shadows of betrayal.";
                             case "Gravestone 8": return "Lord Arin, 1365-1415 :\nRoyal Steward to the Crown, Keeper of the King's Household, whose loyalty was unwavering until the shadows of betrayal claimed him.";
-                            case "Gravestone 4": return "Prince Edric, 1370-1415 :\nCrown Prince and Knight of the Realm, whose bright future was extinguished in the flames of rebellion.";
+                            case "Gravestone 4": return "Prince Edric, 1371-1415 :\nCrown Prince and Knight of the Realm, whose bright future was extinguished in the flames of rebellion.";
                             case "Gravestone 7": return "Mastein Blackwood, 1363-1415 :\nChronicler of the King’s Deeds and his Kingdom’s Prosperity. He recorded an honorable and glorious reign but could not write its end";
                             case "Gravestone 1": return "Luther Esso, 1366-1415 :\nHere lies Luther Esso, Master of Treaties and Builder of Bridge. His words quelled storms and forged iron bonds, yet even his eloquence could not mend a kingdom torn apart.";
                             case "Gravestone 3": return "Princess Elara, 1375-1415 :\nSister to the King, Heart of the Realm, whose love for her family and people was boundless, even in death.";
@@ -194,7 +194,7 @@ public class DialogueManager : NetworkBehaviour
                             case "Gravestone 4": return "Prince Edric, 1366-1415 :\nCrown Prince and Knight of the Realm, whose bright future was extinguished in the flames of rebellion.";
                             case "Gravestone 7": return "Mastein Blackwood, 1368-1415 :\nChronicler of the King’s Deeds and his Kingdom’s Prosperity. He recorded an honorable and glorious reign but could not write its end";
                             case "Gravestone 1": return "Luther Esso, 1360-1415 :\nHere lies Luther Esso, Master of Treaties and Builder of Bridge. His words quelled storms and forged iron bonds, yet even his eloquence could not mend a kingdom torn apart.";
-                            case "Gravestone 3": return "Princess Elara, 1375-1415 :\nSister to the King, Heart of the Realm, whose love for her family and people was boundless, even in death.";
+                            case "Gravestone 3": return "Princess Elara, 1376-1415 :\nSister to the King, Heart of the Realm, whose love for her family and people was boundless, even in death.";
 
                             // for 1srt enigma with pillar 
                             case "Stone 0 red": return "He was the future of the realm, brave and noble—but rebellion claimed him before he could wear the crown."; // Prince Edric
@@ -240,7 +240,7 @@ public class DialogueManager : NetworkBehaviour
                             case "Gravestone 2": return "Lord Aldric Blackthorn, 1361-1415 :\nRoyal Advisor to the Crown, Keeper of the King's Seal, whose wisdom was lost to the shadows of betrayal.";
                             case "Gravestone 8": return "Lord Arin, 1365-1415 :\nRoyal Steward to the Crown, Keeper of the King's Household, whose loyalty was unwavering until the shadows of betrayal claimed him.";
                             case "Gravestone 4": return "Prince Edric, 1371-1415 :\nCrown Prince and Knight of the Realm, whose bright future was extinguished in the flames of rebellion.";
-                            case "Gravestone 7": return "Mastein Blackwood, 1365-1415 :\nChronicler of the King’s Deeds and his Kingdom’s Prosperity. He recorded an honorable and glorious reign but could not write its end";
+                            case "Gravestone 7": return "Mastein Blackwood, 1366-1415 :\nChronicler of the King’s Deeds and his Kingdom’s Prosperity. He recorded an honorable and glorious reign but could not write its end";
                             case "Gravestone 1": return "Luther Esso, 1359-1415 :\nHere lies Luther Esso, Master of Treaties and Builder of Bridge. His words quelled storms and forged iron bonds, yet even his eloquence could not mend a kingdom torn apart.";
                             case "Gravestone 3": return "Princess Elara, 1372-1415 :\nSister to the King, Heart of the Realm, whose love for her family and people was boundless, even in death.";
 
