@@ -1,10 +1,15 @@
-using UnityEngine;
 using Mirror;
+using UnityEngine;
+using UnityEngine.Audio;
 
 public class Enigme2Medieval : NetworkBehaviour
 {
     public GameObject feuFL;
     public GameObject feuFR;
+
+
+    public AudioClip successAudio = null;
+    public AudioClip failureAudio = null;
 
     private bool IsPlaying;
 
@@ -61,7 +66,8 @@ public class Enigme2Medieval : NetworkBehaviour
                 
                 IsPlaying=false;
 
-
+                AudioSource audioSource = GetComponent<AudioSource>();
+                if (audioSource!=null)audioSource.Play();
 
                 GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
                 foreach (GameObject p in players)

@@ -11,15 +11,8 @@ public class DialogueManager : NetworkBehaviour
     GameObject dialogueBox; // Le canvas de la bo�te de dialogue
     TMP_Text dialogueText;  // Le texte affich� dans la bo�te de dialogue
     GameObject objetAvecEnigme;
-    List<int> OrdrePilliers;
-    public List<List<int>> ordrePilliersRandom = new List<List<int>> {new List<int> {0,6,3,5,1,2,4},
-                                                                      new List<int> {6,5,2,4,0,3,1},
-                                                                      new List<int> {3,1,4,6,2,0,5},
-                                                                      new List<int> {5,0,3,6,1,4,2},
-                                                                      new List<int> {2,4,6,1,3,5,0},
-                                                                      new List<int> {1,3,5,0,6,4,2},
-                                                                      new List<int> {4,6,0,2,5,1,3},
-                                                                     };
+    private SyncList<int> OrdrePilliers = new SyncList<int>();
+
 
     GameObject MapGride;
 
@@ -72,10 +65,11 @@ public class DialogueManager : NetworkBehaviour
         }
     }
 
+
     private string SelectMessage(string tag)
     {
 
-        if (OrdrePilliers == null)
+        if (OrdrePilliers.Count==0 )
         {
             OrdrePilliers = objetAvecEnigme.GetComponentInChildren<Enigme1Medieval>().ordrePilliers;
             Debug.Log($"Ordre : {string.Join(" ", OrdrePilliers)}");
@@ -86,7 +80,7 @@ public class DialogueManager : NetworkBehaviour
             switch (OrdrePilliers)  
             {
                  
-                case List<int> l when l[0] == 0: // cas {0,6,3,5,1,2,4}
+                case SyncList<int> l when l[0] == 0: // cas {0,6,3,5,1,2,4}
                     {
                         switch (tag)
                         {
@@ -110,7 +104,7 @@ public class DialogueManager : NetworkBehaviour
                         }  // He was the future of the realm, brave and noble—but rebellion claimed him before he could wear the crown. : prince
                         break;
                     }
-                case List<int> l when l[0] == 1: //{1,3,5,0,6,4,2}
+                case SyncList<int> l when l[0] == 1: //{1,3,5,0,6,4,2}
                     {
                         switch (tag)
                         {
@@ -135,7 +129,7 @@ public class DialogueManager : NetworkBehaviour
                         break;
                     }
 
-                case List<int> l when l[0] == 2: // {2,4,6,1,3,5,0}
+                case SyncList<int> l when l[0] == 2: // {2,4,6,1,3,5,0}
                     {
                         switch (tag)
                         {
@@ -159,7 +153,7 @@ public class DialogueManager : NetworkBehaviour
                         }  
                         break;
                     }
-                case List<int> l when l[0] == 3: // { 3,1,4,6,2,0,5}
+                case SyncList<int> l when l[0] == 3: // { 3,1,4,6,2,0,5}
                     { 
                         switch (tag)
                         {
@@ -183,7 +177,7 @@ public class DialogueManager : NetworkBehaviour
                         }  // 
                         break;
                     }
-                case List<int> l when l[0] == 4: // {4,6,0,2,5,1,3}
+                case SyncList<int> l when l[0] == 4: // {4,6,0,2,5,1,3}
                     {
                         switch (tag)
                         {
@@ -207,7 +201,7 @@ public class DialogueManager : NetworkBehaviour
                         }  //  
                         break;
                     }
-                case List<int> l when l[0] == 5: // {5,0,3,6,1,4,2}
+                case SyncList<int> l when l[0] == 5: // {5,0,3,6,1,4,2}
                     {
                         switch (tag)
                         {
@@ -231,7 +225,7 @@ public class DialogueManager : NetworkBehaviour
                         } 
                         break;
                     }
-                case List<int> l when l[0] == 6: // {6,5,2,4,0,3,1}
+                case SyncList<int> l when l[0] == 6: // {6,5,2,4,0,3,1}
                     {
                         switch (tag)
                         {

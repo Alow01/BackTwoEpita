@@ -28,7 +28,9 @@ public class Enigme1Medieval : NetworkBehaviour
                                                                       new List<int> {4,6,0,2,5,1,3},
                                                                      };
 
-    public List<int> ordrePilliers;
+    public SyncList<int> ordrePilliers = new SyncList<int>();
+     
+
     public List<int> PilliersActive;
     public AudioClip successAudio = null;
     public AudioClip failureAudio = null;
@@ -37,14 +39,24 @@ public class Enigme1Medieval : NetworkBehaviour
 
     private void Start()
     {
-        ordrePilliers = ordrePilliersRandom[Random.Range(0, ordrePilliersRandom.Count)];
+        SetOrder();
         PilliersActive = new List<int>();
         fini = false;
         //particleSystem.gameObject.SetActive(false);
         Debug.Log($"Ordre des pilliers : {string.Join(" ",ordrePilliers)}");
     }
 
-   
+    [Server]
+    public void SetOrder()
+    {
+        ordrePilliers.Clear(); // Vide la liste existante (important !)
+        var randomOrder = ordrePilliersRandom[Random.Range(0, ordrePilliersRandom.Count)];
+        foreach (var v in randomOrder)
+            ordrePilliers.Add(v); // Ajoute les éléments un par un
+    }
+
+
+
 
     void Update()
     {
@@ -63,8 +75,8 @@ public class Enigme1Medieval : NetworkBehaviour
                     if (successAudio!=null)
                     {
                         audioSource.resource = successAudio;
-                        //audioSource.Play(); // joue le son de reussite
-                        //audioSource.Stop();
+                        audioSource.Play(); // joue le son de reussite
+                        
                     }
 
                     particleConsigne1.gameObject.SetActive(false); // desactive les systemes de particules des consignes
@@ -77,7 +89,7 @@ public class Enigme1Medieval : NetworkBehaviour
                     if (failureAudio != null)
                     {
                         audioSource.resource = failureAudio;
-                        //audioSource.Play(); // joue le son d'echec
+                        audioSource.Play(); // joue le son d'echec
                         //audioSources.Stop();
                     } 
                     foreach (GameObject Pillier in Pilliers) // éteint les pilliers
