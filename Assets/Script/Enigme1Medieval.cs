@@ -11,9 +11,8 @@ public class Enigme1Medieval : NetworkBehaviour
 {
     public float lerpSpeed;
     public GameObject porte;
-    public List<GameObject> Lanterns;
 #pragma warning disable CS0108 // Un membre masque un membre hérité ; le mot clé new est manquant
-    public ParticleSystem particleSystem;
+    
 #pragma warning restore CS0108 // Un membre masque un membre hérité ; le mot clé new est manquant
     public List<GameObject> Pilliers;
     public ParticleSystem particleConsigne1;

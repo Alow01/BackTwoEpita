@@ -9,7 +9,7 @@ public class FeuFollet : NetworkBehaviour
     public bool IsPlaying;
     public int willBeCapturedAfter;
 
-    public float detectionRange = 2f;
+    public float detectionRange;
 
     public Enigme2Medieval enigmaManager;
 
@@ -76,7 +76,6 @@ public class FeuFollet : NetworkBehaviour
                     dm.RpcShowDialogue("ff enfui");
                 }
 
-                break; // Only act on the first player found in range
             }
         }
     }
