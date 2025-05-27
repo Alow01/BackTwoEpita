@@ -76,6 +76,7 @@ public class FeuFollet : NetworkBehaviour
                     dm.RpcShowDialogue("ff enfui");
                 }
 
+                break; // Only act on the first player found in range
             }
         }
     }
