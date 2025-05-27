@@ -31,6 +31,8 @@ public class EgSymbManager : NetworkBehaviour
 
             if (condition) {
                 Debug.Log("All symbols has been press at the same time -> Success enigma -> Door P2 is now open");
+                AudioSource audioSource = GetComponent<AudioSource>();
+                if (audioSource != null) audioSource.Play();
                 hasBeenOpen = true;
                 RpcMoveDoor();               
             }

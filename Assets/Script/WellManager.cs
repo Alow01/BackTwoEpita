@@ -1,18 +1,34 @@
+using Mirror;
 using UnityEngine;
 
 public class WellManager : MonoBehaviour
 {
-    public AudioSource audioSource;
+    private AudioSource audioSource;
     public EgypteEnigma2 manager;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        audioSource.Play();
-        //if(this.gameObject.name != "WellP1") manager.q.Enqueue(this.gameObject.name);
+        if (!other.CompareTag("Player")) return;
+
+        NetworkIdentity identity = other.GetComponent<NetworkIdentity>();
+        if (identity != null && identity.isLocalPlayer)
+        {
+            AudioSource audioSource = GetComponent<AudioSource>();
+            if (audioSource != null && !audioSource.isPlaying)
+                audioSource.Play();
+        }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        audioSource.Stop();
+        if (!other.CompareTag("Player")) return;
+
+        NetworkIdentity identity = other.GetComponent<NetworkIdentity>();
+        if (identity != null && identity.isLocalPlayer)
+        {
+            AudioSource audioSource = GetComponent<AudioSource>();
+            if (audioSource != null)
+                audioSource.Stop();
+        }
     }
 }
